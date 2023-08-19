@@ -45,7 +45,7 @@
             TxtBoxUser.Size = new Size(151, 27);
             TxtBoxUser.TabIndex = 0;
             TxtBoxUser.TextChanged += TxtBoxUser_TextChanged;
-            TxtBoxUser.KeyDown += txtUser_KeyDown;
+            TxtBoxUser.KeyDown += TextBox_KeyDown;
             // 
             // TxtBoxPass
             // 
@@ -56,7 +56,7 @@
             TxtBoxPass.TabIndex = 1;
             TxtBoxPass.UseSystemPasswordChar = true;
             TxtBoxPass.TextChanged += TxtBoxPass_TextChanged;
-            TxtBoxPass.KeyDown += txtPass_KeyDown;
+            TxtBoxPass.KeyDown += TextBox_KeyDown;
             // 
             // button1
             // 

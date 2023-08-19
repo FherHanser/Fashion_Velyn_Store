@@ -97,5 +97,14 @@ namespace Fashion_Velyn_Store
         {
 
         }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true; // Para evitar que se emita un sonido al presionar Enter
+                this.SelectNextControl((Control)sender, true, true, true, true);
+            }
+        }
     }
 }

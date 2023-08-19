@@ -109,6 +109,7 @@
             textBoxTipoCliente.Name = "textBoxTipoCliente";
             textBoxTipoCliente.Size = new Size(239, 27);
             textBoxTipoCliente.TabIndex = 20;
+            textBoxTipoCliente.KeyDown += TextBox_KeyDown;
             // 
             // textBoxCorreo
             // 
@@ -117,6 +118,7 @@
             textBoxCorreo.Name = "textBoxCorreo";
             textBoxCorreo.Size = new Size(239, 27);
             textBoxCorreo.TabIndex = 19;
+            textBoxCorreo.KeyDown += TextBox_KeyDown;
             // 
             // textBoxReferencia
             // 
@@ -125,6 +127,7 @@
             textBoxReferencia.Name = "textBoxReferencia";
             textBoxReferencia.Size = new Size(284, 27);
             textBoxReferencia.TabIndex = 18;
+            textBoxReferencia.KeyDown += TextBox_KeyDown;
             // 
             // textBoxDireccion
             // 
@@ -133,6 +136,7 @@
             textBoxDireccion.Name = "textBoxDireccion";
             textBoxDireccion.Size = new Size(284, 27);
             textBoxDireccion.TabIndex = 17;
+            textBoxDireccion.KeyDown += TextBox_KeyDown;
             // 
             // textBoxTel2
             // 
@@ -141,6 +145,7 @@
             textBoxTel2.Name = "textBoxTel2";
             textBoxTel2.Size = new Size(102, 27);
             textBoxTel2.TabIndex = 16;
+            textBoxTel2.KeyDown += TextBox_KeyDown;
             // 
             // textBoxTel1
             // 
@@ -149,6 +154,7 @@
             textBoxTel1.Name = "textBoxTel1";
             textBoxTel1.Size = new Size(98, 27);
             textBoxTel1.TabIndex = 15;
+            textBoxTel1.KeyDown += TextBox_KeyDown;
             // 
             // label8
             // 
@@ -211,6 +217,7 @@
             textBoxApellidos.Name = "textBoxApellidos";
             textBoxApellidos.Size = new Size(284, 27);
             textBoxApellidos.TabIndex = 8;
+            textBoxApellidos.KeyDown += TextBox_KeyDown;
             // 
             // label2
             // 
@@ -229,6 +236,7 @@
             textBoxName.Size = new Size(284, 27);
             textBoxName.TabIndex = 6;
             textBoxName.TextChanged += textBoxName_TextChanged;
+            textBoxName.KeyDown += TextBox_KeyDown;
             // 
             // label1
             // 

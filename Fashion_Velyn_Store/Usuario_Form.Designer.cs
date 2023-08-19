@@ -68,7 +68,7 @@
             textBoxPass.Size = new Size(190, 23);
             textBoxPass.TabIndex = 24;
             textBoxPass.TextChanged += textBoxPass_TextChanged;
-            textBoxPass.KeyDown += textBoxPass_KeyDown;
+            textBoxPass.KeyDown += TextBox_KeyDown; 
             // 
             // label3
             // 
@@ -106,7 +106,7 @@
             textBoxUsuario.Size = new Size(190, 23);
             textBoxUsuario.TabIndex = 19;
             textBoxUsuario.TextChanged += textBoxUsuario_TextChanged;
-            textBoxUsuario.KeyDown += textBoxUsuario_KeyDown;
+            textBoxUsuario.KeyDown += TextBox_KeyDown;
 
             // 
             // label7
@@ -125,7 +125,7 @@
             textBoxApellidos.Size = new Size(249, 23);
             textBoxApellidos.TabIndex = 8;
             textBoxApellidos.TextChanged += textBoxApellidos_TextChanged;
-            textBoxApellidos.KeyDown += textBoxApellidos_KeyDown;
+            textBoxApellidos.KeyDown += TextBox_KeyDown; 
             // 
             // label2
             // 
@@ -143,7 +143,7 @@
             textBoxName.Size = new Size(249, 23);
             textBoxName.TabIndex = 6;
             textBoxName.TextChanged += textBoxName_TextChanged;
-            textBoxName.KeyDown += textBoxName_KeyDown;
+            textBoxName.KeyDown += TextBox_KeyDown;
             // 
             // label1
             // 

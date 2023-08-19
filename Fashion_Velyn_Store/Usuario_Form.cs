@@ -58,32 +58,22 @@ namespace Fashion_Velyn_Store
 
             }
         }
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true; // Para evitar que se emita un sonido al presionar Enter
+                this.SelectNextControl((Control)sender, true, true, true, true);
+            }
+        }
 
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
 
         }
-        private void textBoxName_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = true; // para evitar que se emita un sonido al presionar Enter
-                this.SelectNextControl((Control)sender, true, true, true, true);
-            }
 
-        }
         private void textBoxApellidos_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBoxApellidos_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = true; // para evitar que se emita un sonido al presionar Enter
-                this.SelectNextControl((Control)sender, true, true, true, true);
-            }
 
         }
 
@@ -91,33 +81,14 @@ namespace Fashion_Velyn_Store
         {
 
         }
-        private void textBoxUsuario_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = true; // para evitar que se emita un sonido al presionar Enter
-                this.SelectNextControl((Control)sender, true, true, true, true);
-            }
-
-
-        }
 
         private void textBoxPass_TextChanged(object sender, EventArgs e)
         {
 
         }
-        private void textBoxPass_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = true; // para evitar que se emita un sonido al presionar Enter
-                this.SelectNextControl((Control)sender, true, true, true, true);
-            }
-
-        }
-
-
-
     }
 }
+
+
+
 
