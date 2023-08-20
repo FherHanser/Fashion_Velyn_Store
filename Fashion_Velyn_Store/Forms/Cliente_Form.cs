@@ -8,6 +8,7 @@ using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Fashion_Velyn_Store.Class;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Fashion_Velyn_Store

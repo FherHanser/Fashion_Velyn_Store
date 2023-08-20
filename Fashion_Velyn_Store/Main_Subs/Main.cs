@@ -44,5 +44,12 @@ namespace Fashion_Velyn_Store
             this.Hide();
             menu.Show();
         }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            // Cerrar la aplicación
+            Application.Exit();
+        }
+
     }
 }

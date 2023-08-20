@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fashion_Velyn_Store.List;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +35,13 @@ namespace Fashion_Velyn_Store
             Usuario_Form usurioForm = new Usuario_Form();
             this.Hide();
             usurioForm.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            List_Usuarios main = new List_Usuarios();
+            this.Hide();
+            main.Show();
         }
     }
 }

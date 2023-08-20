@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.Sqlite;
 using System;
 
-namespace Fashion_Velyn_Store
+namespace Fashion_Velyn_Store.Class
 {
     public class UsuarioManager
     {

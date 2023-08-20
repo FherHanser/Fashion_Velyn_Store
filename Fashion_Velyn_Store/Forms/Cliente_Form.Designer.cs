@@ -304,5 +304,6 @@
         private Label label3;
         private Button btnAgregar;
         private Button btnLimpiar;
+        private ColumnHeader columnHeader1;
     }
 }

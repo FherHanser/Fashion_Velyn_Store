@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Fashion_Velyn_Store
+namespace Fashion_Velyn_Store.Class
 {
     internal static class Program
     {

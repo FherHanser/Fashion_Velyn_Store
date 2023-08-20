@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Fashion_Velyn_Store.Class;
 
 namespace Fashion_Velyn_Store
 {

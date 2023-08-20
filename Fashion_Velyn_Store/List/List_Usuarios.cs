@@ -8,34 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fashion_Velyn_Store
+namespace Fashion_Velyn_Store.List
 {
-    public partial class Main_Clientes : Form
+    public partial class List_Usuarios : Form
     {
-        public Main_Clientes()
+        public List_Usuarios()
         {
             InitializeComponent();
         }
 
-        private void Main_Clientes_Load(object sender, EventArgs e)
+        private void List_Usuarios_Load(object sender, EventArgs e)
         {
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Main inicio = new Main();
+            Main_Usuarios inicio = new Main_Usuarios();
             this.Hide();
             inicio.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Cliente_Form nuevoCliente = new Cliente_Form();
-            this.Hide();
-            nuevoCliente.Show();
-
-
         }
     }
 }

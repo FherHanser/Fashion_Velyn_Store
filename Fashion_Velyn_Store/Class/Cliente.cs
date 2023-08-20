@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fashion_Velyn_Store
+namespace Fashion_Velyn_Store.Class
 {
     public class Cliente
     {
