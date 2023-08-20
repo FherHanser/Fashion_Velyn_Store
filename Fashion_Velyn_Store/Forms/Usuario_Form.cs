@@ -118,7 +118,7 @@ namespace Fashion_Velyn_Store
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Main menu = new();
+            Main_Clientes menu = new();
             this.Hide();
             menu.Show();
         }

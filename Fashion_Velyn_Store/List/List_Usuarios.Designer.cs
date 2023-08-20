@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             button4 = new Button();
+            dataGridViewUsuarios = new DataGridView();
+            button1 = new Button();
+            buttonBuscar = new Button();
+            label1 = new Label();
+            textBoxBuscarUsuario = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUsuarios).BeginInit();
             SuspendLayout();
             // 
             // button4
@@ -42,22 +48,83 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // dataGridViewUsuarios
+            // 
+            dataGridViewUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewUsuarios.Location = new Point(348, 185);
+            dataGridViewUsuarios.Name = "dataGridViewUsuarios";
+            dataGridViewUsuarios.RowHeadersWidth = 51;
+            dataGridViewUsuarios.RowTemplate.Height = 29;
+            dataGridViewUsuarios.Size = new Size(577, 347);
+            dataGridViewUsuarios.TabIndex = 6;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(529, 85);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 15;
+            button1.Text = "Limpiar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // buttonBuscar
+            // 
+            buttonBuscar.Location = new Point(420, 85);
+            buttonBuscar.Name = "buttonBuscar";
+            buttonBuscar.Size = new Size(94, 29);
+            buttonBuscar.TabIndex = 14;
+            buttonBuscar.Text = "Buscar";
+            buttonBuscar.UseVisualStyleBackColor = true;
+            buttonBuscar.Click += buttonBuscar_Click_1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(118, 89);
+            label1.Name = "label1";
+            label1.Size = new Size(52, 20);
+            label1.TabIndex = 13;
+            label1.Text = "Buscar";
+            // 
+            // textBoxBuscarUsuario
+            // 
+            textBoxBuscarUsuario.Location = new Point(185, 86);
+            textBoxBuscarUsuario.Name = "textBoxBuscarUsuario";
+            textBoxBuscarUsuario.PlaceholderText = "Ingresa Nombre del Usuario";
+            textBoxBuscarUsuario.Size = new Size(217, 27);
+            textBoxBuscarUsuario.TabIndex = 12;
+            textBoxBuscarUsuario.TextChanged += textBoxBuscarUsuario_TextChanged;
+            textBoxBuscarUsuario.KeyDown += TextBox_KeyDown;
+            // 
             // List_Usuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1262, 668);
+            Controls.Add(button1);
+            Controls.Add(buttonBuscar);
+            Controls.Add(label1);
+            Controls.Add(textBoxBuscarUsuario);
+            Controls.Add(dataGridViewUsuarios);
             Controls.Add(button4);
             Name = "List_Usuarios";
             Opacity = 0.75D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registros";
             Load += List_Usuarios_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUsuarios).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button button4;
+        private DataGridView dataGridViewUsuarios;
+        private Button button1;
+        private Button buttonBuscar;
+        private Label label1;
+        private TextBox textBoxBuscarUsuario;
     }
 }

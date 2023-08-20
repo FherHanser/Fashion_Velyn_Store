@@ -25,26 +25,23 @@ namespace Fashion_Velyn_Store
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DatabaseConnection dbConnection = new DatabaseConnection();
+            AuthenticationManager authManager = new AuthenticationManager(dbConnection);
+
+            string nombreCompleto = authManager.GetNameByCredentials(TxtBoxUser.Text, TxtBoxPass.Text);
+
+            if (nombreCompleto != null)
             {
-                DatabaseConnection dbConnection = new DatabaseConnection();
-                AuthenticationManager authManager = new AuthenticationManager(dbConnection);
-
-                string nombreCompleto = authManager.GetNameByCredentials(TxtBoxUser.Text, TxtBoxPass.Text);
-
-
-                if (nombreCompleto != null)
-                {
-                    Main consulta = new Main();
-                    this.Hide();
-                    consulta.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Credenciales inválidas");
-                }
+                MessageBox.Show($"Bienvenido, {nombreCompleto}"); // Mostrar mensaje de bienvenida con el nombre del usuario
+                Main consulta = new Main();
+                this.Hide();
+                consulta.Show();
+            }
+            else
+            {
+                MessageBox.Show("Credenciales inválidas");
             }
         }
-
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -54,7 +51,6 @@ namespace Fashion_Velyn_Store
                 this.SelectNextControl((Control)sender, true, true, true, true);
             }
         }
-
 
         private void TxtBoxUser_TextChanged(object sender, EventArgs e)
         {

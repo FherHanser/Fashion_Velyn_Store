@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            button4 = new Button();
             textBoxPass2 = new TextBox();
             label4 = new Label();
             textBoxPass = new TextBox();
@@ -41,7 +42,6 @@
             label2 = new Label();
             textBoxName = new TextBox();
             label1 = new Label();
-            button4 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,6 +68,17 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Información del Nuevo Usuario";
+            // 
+            // button4
+            // 
+            button4.Location = new Point(519, 19);
+            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(65, 33);
+            button4.TabIndex = 4;
+            button4.Text = "Menú";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // textBoxPass2
             // 
@@ -193,17 +204,6 @@
             label1.Size = new Size(70, 20);
             label1.TabIndex = 5;
             label1.Text = "Nombres";
-            // 
-            // button4
-            // 
-            button4.Location = new Point(519, 19);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(65, 33);
-            button4.TabIndex = 4;
-            button4.Text = "Inicio";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
             // 
             // Usuario_Form
             // 

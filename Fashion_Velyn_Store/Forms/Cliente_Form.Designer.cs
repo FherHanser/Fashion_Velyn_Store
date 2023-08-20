@@ -99,7 +99,7 @@
             button4.Name = "button4";
             button4.Size = new Size(65, 33);
             button4.TabIndex = 4;
-            button4.Text = "Inicio";
+            button4.Text = "Menú";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -304,6 +304,5 @@
         private Label label3;
         private Button btnAgregar;
         private Button btnLimpiar;
-        private ColumnHeader columnHeader1;
     }
 }

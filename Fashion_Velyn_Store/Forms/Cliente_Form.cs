@@ -27,7 +27,7 @@ namespace Fashion_Velyn_Store
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Main inicio = new Main();
+            Main_Clientes inicio = new Main_Clientes();
             this.Hide();
             inicio.Show();
         }

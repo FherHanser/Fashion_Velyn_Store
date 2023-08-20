@@ -93,7 +93,7 @@ namespace Fashion_Velyn_Store.List
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            LoadClientes();
             textBoxBuscarNombre.Text = "";
         }
     }
