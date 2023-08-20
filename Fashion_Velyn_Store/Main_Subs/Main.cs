@@ -47,9 +47,14 @@ namespace Fashion_Velyn_Store
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            // Cerrar la aplicación
-            Application.Exit();
+            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas salir?", "Confirma salir de Fashion Velyn Store", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit(); // Cierra la aplicación
+            }
         }
+
 
     }
 }

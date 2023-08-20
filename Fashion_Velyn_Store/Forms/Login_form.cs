@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fashion_Velyn_Store.Class;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Fashion_Velyn_Store
 {
@@ -30,18 +32,37 @@ namespace Fashion_Velyn_Store
 
             string nombreCompleto = authManager.GetNameByCredentials(TxtBoxUser.Text, TxtBoxPass.Text);
 
-            if (nombreCompleto != null)
+            if (string.IsNullOrWhiteSpace(TxtBoxUser.Text))
             {
-                MessageBox.Show($"Bienvenido, {nombreCompleto}"); // Mostrar mensaje de bienvenida con el nombre del usuario
-                Main consulta = new Main();
-                this.Hide();
-                consulta.Show();
+                msgError("Ingrese el nombre de usuario");
+            }
+            else if (string.IsNullOrWhiteSpace(TxtBoxPass.Text))
+            {
+                msgError("Ingrese la contraseña");
             }
             else
             {
-                MessageBox.Show("Credenciales inválidas");
+                if (nombreCompleto != null)
+                {
+                    MessageBox.Show($"Bienvenido, {nombreCompleto}"); // Mostrar mensaje de bienvenida con el nombre del usuario
+                    Main consulta = new Main();
+                    this.Hide();
+                    consulta.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Credenciales inválidas");
+                }
             }
         }
+
+        private void msgError(string msg)
+        {
+            labelError.Text = msg;
+            labelError.Visible = true;
+        }
+
+
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -58,6 +79,29 @@ namespace Fashion_Velyn_Store
         }
 
         private void TxtBoxPass_TextChanged(object sender, EventArgs e)
+        {
+            // Mostrar el carácter durante un corto período y luego ocultarlo
+            TxtBoxPass.UseSystemPasswordChar = false;
+
+            Timer timer = new Timer();
+            timer.Interval = 500; // Intervalo en milisegundos (1 segundo en este caso)
+            timer.Tick += (s, ev) =>
+            {
+                TxtBoxPass.UseSystemPasswordChar = true;
+                timer.Stop();
+                timer.Dispose();
+            };
+            timer.Start();
+        }
+
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Cerrar la aplicación
+            Application.Exit();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

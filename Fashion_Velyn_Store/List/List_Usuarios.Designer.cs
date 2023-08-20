@@ -51,11 +51,11 @@
             // dataGridViewUsuarios
             // 
             dataGridViewUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewUsuarios.Location = new Point(348, 185);
+            dataGridViewUsuarios.Location = new Point(311, 201);
             dataGridViewUsuarios.Name = "dataGridViewUsuarios";
             dataGridViewUsuarios.RowHeadersWidth = 51;
             dataGridViewUsuarios.RowTemplate.Height = 29;
-            dataGridViewUsuarios.Size = new Size(577, 347);
+            dataGridViewUsuarios.Size = new Size(631, 347);
             dataGridViewUsuarios.TabIndex = 6;
             // 
             // button1

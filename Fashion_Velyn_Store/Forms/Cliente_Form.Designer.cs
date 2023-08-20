@@ -72,7 +72,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(textBoxName);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(525, 53);
+            groupBox1.Location = new Point(349, 63);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
@@ -119,6 +119,7 @@
             textBoxTipoCliente.Location = new Point(175, 412);
             textBoxTipoCliente.Margin = new Padding(3, 4, 3, 4);
             textBoxTipoCliente.Name = "textBoxTipoCliente";
+            textBoxTipoCliente.PlaceholderText = "Defina: Mayorista ó Minorista";
             textBoxTipoCliente.Size = new Size(239, 27);
             textBoxTipoCliente.TabIndex = 20;
             textBoxTipoCliente.KeyDown += TextBox_KeyDown;
@@ -274,6 +275,7 @@
             Controls.Add(groupBox1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Cliente_Form";
+            Opacity = 0.75D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Nuevo Cliente";
             Load += Cliente_Form_Load;
