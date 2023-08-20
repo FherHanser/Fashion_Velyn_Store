@@ -30,12 +30,19 @@ namespace Fashion_Velyn_Store
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            LimpiarCasillas();
+        }
+
+
+        private void LimpiarCasillas()
+        {
             textBoxName.Text = "";
             textBoxApellidos.Text = "";
             textBoxUsuario.Text = "";
             textBoxPass.Text = "";
             textBoxPass2.Text = "";
         }
+
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -69,10 +76,12 @@ namespace Fashion_Velyn_Store
             if (insertExitoso)
             {
                 MessageBox.Show("Usuario insertado exitosamente.");
+                LimpiarCasillas();
             }
             else
             {
-                MessageBox.Show("Error al insertar usuario.");
+                MessageBox.Show("No se guardó Usuario Nuevo.");
+                LimpiarCasillas();
             }
         }
 
@@ -118,7 +127,7 @@ namespace Fashion_Velyn_Store
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Main_Clientes menu = new();
+            Main_Usuarios menu = new();
             this.Hide();
             menu.Show();
         }

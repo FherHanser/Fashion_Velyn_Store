@@ -98,6 +98,45 @@ namespace Fashion_Velyn_Store.List
             }
         }
 
+        private void btnEliminarUsuario_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewUsuarios.SelectedRows.Count > 0)
+            {
+                int rowIndex = dataGridViewUsuarios.SelectedRows[0].Index;
+                int usuarioId = Convert.ToInt32(dataGridViewUsuarios.Rows[rowIndex].Cells["id_usuario"].Value);
+
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar este usuario?", "Confirmación de Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    using (DatabaseConnection dbConnection = new DatabaseConnection())
+                    {
+                        string query = "DELETE FROM usuarios WHERE id_usuario = @UsuarioId";
+
+                        using (var command = new Microsoft.Data.Sqlite.SqliteCommand(query, dbConnection.GetConnection()))
+                        {
+                            command.Parameters.AddWithValue("@UsuarioId", usuarioId);
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Usuario eliminado exitosamente.");
+                                LoadUsuarios(); // Recargar los datos en el DataGridView
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo eliminar el usuario.");
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un usuario para eliminar.");
+            }
+        }
+
     }
 }
 

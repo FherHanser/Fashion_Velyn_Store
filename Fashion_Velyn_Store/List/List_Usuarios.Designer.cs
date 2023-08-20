@@ -34,6 +34,7 @@
             buttonBuscar = new Button();
             label1 = new Label();
             textBoxBuscarUsuario = new TextBox();
+            btnEliminarUsuario = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             button4.Name = "button4";
             button4.Size = new Size(65, 33);
             button4.TabIndex = 5;
-            button4.Text = "Inicio";
+            button4.Text = "Menú";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -60,7 +61,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(529, 85);
+            button1.Location = new Point(647, 86);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 15;
@@ -97,11 +98,23 @@
             textBoxBuscarUsuario.TextChanged += textBoxBuscarUsuario_TextChanged;
             textBoxBuscarUsuario.KeyDown += TextBox_KeyDown;
             // 
+            // btnEliminarUsuario
+            // 
+            btnEliminarUsuario.ForeColor = SystemColors.ControlText;
+            btnEliminarUsuario.Location = new Point(534, 85);
+            btnEliminarUsuario.Name = "btnEliminarUsuario";
+            btnEliminarUsuario.Size = new Size(95, 30);
+            btnEliminarUsuario.TabIndex = 16;
+            btnEliminarUsuario.Text = "Eliminar";
+            btnEliminarUsuario.UseVisualStyleBackColor = true;
+            btnEliminarUsuario.Click += btnEliminarUsuario_Click;
+            // 
             // List_Usuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1262, 668);
+            Controls.Add(btnEliminarUsuario);
             Controls.Add(button1);
             Controls.Add(buttonBuscar);
             Controls.Add(label1);
@@ -126,5 +139,6 @@
         private Button buttonBuscar;
         private Label label1;
         private TextBox textBoxBuscarUsuario;
+        private Button btnEliminarUsuario;
     }
 }

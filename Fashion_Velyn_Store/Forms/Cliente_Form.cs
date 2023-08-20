@@ -41,7 +41,7 @@ namespace Fashion_Velyn_Store
                 string.IsNullOrWhiteSpace(textBoxTel1.Text) ||
                 string.IsNullOrWhiteSpace(textBoxDireccion.Text) ||
                 string.IsNullOrWhiteSpace(textBoxReferencia.Text) ||
-                string.IsNullOrWhiteSpace(textBoxTipoCliente.Text)) // Aquí faltaba un paréntesis de cierre
+                string.IsNullOrWhiteSpace(textBoxTipoCliente.Text)) 
             {
                 errorMessage = "Todos los campos deben ir llenos, excepto correo y teléfono 2.";
                 msgError(errorMessage);
@@ -123,5 +123,6 @@ namespace Fashion_Velyn_Store
             textBoxCorreo.Text = "";
             textBoxTipoCliente.Text = "";
         }
+
     }
 }
