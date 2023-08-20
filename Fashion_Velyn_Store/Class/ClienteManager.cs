@@ -38,7 +38,7 @@ namespace Fashion_Velyn_Store.Class
 
                 string valuesToInsert = $"Nombres: {cliente.Nombres}\nApellidos: {cliente.Apellidos}\nTeléfono 1: {cliente.Telefono1}\nTeléfono 2: {cliente.Telefono2}\nDirección: {cliente.Direccion}\nReferencia: {cliente.Referencia}\nCorreo: {cliente.Correo}\nClase: {cliente.Clase}";
 
-                DialogResult result = MessageBox.Show("Valores a insertar:\n\n" + valuesToInsert + "\n\n¿Desea continuar?", "Confirmar inserción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Información para Nuevo Cliente:\n\n" + valuesToInsert + "\n\n¿Desea continuar?", "Confirmar inserción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
@@ -53,7 +53,6 @@ namespace Fashion_Velyn_Store.Class
                     else
                     {
                         transaction.Rollback();
-                        MessageBox.Show("Error en el insert");
                         return false;
                     }
                 }
@@ -63,10 +62,9 @@ namespace Fashion_Velyn_Store.Class
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 transaction.Rollback();
-                MessageBox.Show("Error al insertar el cliente: " + ex.Message);
                 return false;
             }
         }

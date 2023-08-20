@@ -34,8 +34,24 @@ namespace Fashion_Velyn_Store
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            string errorMessage = "";
 
-            DatabaseConnection mySQLiteConnection = new DatabaseConnection();
+            if (string.IsNullOrWhiteSpace(textBoxName.Text) ||
+                string.IsNullOrWhiteSpace(textBoxApellidos.Text) ||
+                string.IsNullOrWhiteSpace(textBoxTel1.Text) ||
+                string.IsNullOrWhiteSpace(textBoxDireccion.Text) ||
+                string.IsNullOrWhiteSpace(textBoxReferencia.Text) ||
+                string.IsNullOrWhiteSpace(textBoxTipoCliente.Text)) // Aquí faltaba un paréntesis de cierre
+            {
+                errorMessage = "Todos los campos deben ir llenos, excepto correo y teléfono 2.";
+                msgError(errorMessage);
+                return;
+            }
+            else
+            {
+                labelError.Visible = false; // Hacer invisible el labelError si todos los campos requeridos están llenos
+            }
+
             Cliente nuevoCliente = new Cliente
             {
                 Nombres = textBoxName.Text,
@@ -48,51 +64,39 @@ namespace Fashion_Velyn_Store
                 Clase = textBoxTipoCliente.Text
             };
 
-            // Mostrar MessageBox con la información a cometer
-            string message = $"Información del Nuevo Cliente:\n" +
-                             $"Nombres: {nuevoCliente.Nombres}\n" +
-                             $"Apellidos: {nuevoCliente.Apellidos}\n" +
-                             $"Teléfono 1: {nuevoCliente.Telefono1}\n" +
-                             $"Teléfono 2: {nuevoCliente.Telefono2}\n" +
-                             $"Dirección: {nuevoCliente.Direccion}\n" +
-                             $"Referencia: {nuevoCliente.Referencia}\n" +
-                             $"Correo: {nuevoCliente.Correo}\n" +
-                             $"Clase: {nuevoCliente.Clase}";
+            DatabaseConnection dbConnection = new DatabaseConnection();
+            ClienteManager clienteManager = new ClienteManager(dbConnection);
 
-            DialogResult result = MessageBox.Show(message, "Nuevo Cliente", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            bool insertExitoso = clienteManager.InsertCliente(nuevoCliente);
 
-            if (result == DialogResult.OK)
+            if (insertExitoso)
             {
-
-                DatabaseConnection dbConnection = new DatabaseConnection();
-                ClienteManager clienteManager = new ClienteManager(dbConnection);
-
-                bool insertExitoso = clienteManager.InsertCliente(nuevoCliente);
-
-
-                if (insertExitoso)
-                {
-                    MessageBox.Show("Insert de cliente exitoso");
-                }
-                else
-                {
-                    MessageBox.Show("Error en el insert de cliente");
-                }
+                MessageBox.Show("Nuevo Cliente Registrado");
+                LimpiarCasillas();
             }
+            else
+            {
+                MessageBox.Show("No se Registró un Nuevo Cliente");
+                LimpiarCasillas();
+            }
+        }
+
+        private void msgError(string msg)
+        {
+            labelError.Text = msg;
+            labelError.Visible = true;
         }
 
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            textBoxName.Text = "";
-            textBoxApellidos.Text = "";
-            textBoxTel1.Text = "";
-            textBoxTel2.Text = "";
-            textBoxDireccion.Text = "";
-            textBoxReferencia.Text = "";
-            textBoxCorreo.Text = "";
-            textBoxTipoCliente.Text = "";
+
+
+            LimpiarCasillas();
+
+            labelError.Visible = false; // Hacer invisible el labelError al limpiar los campos
         }
+
 
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
@@ -106,6 +110,18 @@ namespace Fashion_Velyn_Store
                 e.Handled = true; // Para evitar que se emita un sonido al presionar Enter
                 this.SelectNextControl((Control)sender, true, true, true, true);
             }
+        }
+
+        private void LimpiarCasillas()
+        {
+            textBoxName.Text = "";
+            textBoxApellidos.Text = "";
+            textBoxTel1.Text = "";
+            textBoxTel2.Text = "";
+            textBoxDireccion.Text = "";
+            textBoxReferencia.Text = "";
+            textBoxCorreo.Text = "";
+            textBoxTipoCliente.Text = "";
         }
     }
 }

@@ -34,6 +34,7 @@
             label1 = new Label();
             buttonBuscar = new Button();
             button1 = new Button();
+            btnEliminar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).BeginInit();
             SuspendLayout();
             // 
@@ -79,9 +80,10 @@
             // 
             // buttonBuscar
             // 
+            buttonBuscar.ForeColor = SystemColors.ControlText;
             buttonBuscar.Location = new Point(487, 82);
             buttonBuscar.Name = "buttonBuscar";
-            buttonBuscar.Size = new Size(94, 29);
+            buttonBuscar.Size = new Size(95, 30);
             buttonBuscar.TabIndex = 10;
             buttonBuscar.Text = "Buscar";
             buttonBuscar.UseVisualStyleBackColor = true;
@@ -89,19 +91,32 @@
             // 
             // button1
             // 
-            button1.Location = new Point(596, 82);
+            button1.ForeColor = SystemColors.ControlText;
+            button1.Location = new Point(688, 82);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(95, 30);
             button1.TabIndex = 11;
             button1.Text = "Limpiar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.ForeColor = SystemColors.ControlText;
+            btnEliminar.Location = new Point(587, 82);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(95, 30);
+            btnEliminar.TabIndex = 12;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // List_Cliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1262, 668);
+            Controls.Add(btnEliminar);
             Controls.Add(button1);
             Controls.Add(buttonBuscar);
             Controls.Add(label1);
@@ -127,5 +142,6 @@
         private Label label1;
         private Button buttonBuscar;
         private Button button1;
+        private Button btnEliminar;
     }
 }

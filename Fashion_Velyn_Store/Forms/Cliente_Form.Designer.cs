@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            labelError = new Label();
             btnLimpiar = new Button();
             button4 = new Button();
             btnAgregar = new Button();
@@ -53,6 +54,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(labelError);
             groupBox1.Controls.Add(btnLimpiar);
             groupBox1.Controls.Add(button4);
             groupBox1.Controls.Add(btnAgregar);
@@ -80,6 +82,17 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Información del Nuevo Cliente";
+            // 
+            // labelError
+            // 
+            labelError.AutoSize = true;
+            labelError.ForeColor = Color.IndianRed;
+            labelError.Location = new Point(130, 468);
+            labelError.Name = "labelError";
+            labelError.Size = new Size(64, 20);
+            labelError.TabIndex = 23;
+            labelError.Text = "Mensaje";
+            labelError.Visible = false;
             // 
             // btnLimpiar
             // 
@@ -306,5 +319,6 @@
         private Label label3;
         private Button btnAgregar;
         private Button btnLimpiar;
+        private Label labelError;
     }
 }
