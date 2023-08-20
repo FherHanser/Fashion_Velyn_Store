@@ -33,6 +33,7 @@ namespace Fashion_Velyn_Store
             textBoxApellidos.Text = "";
             textBoxUsuario.Text = "";
             textBoxPass.Text = "";
+            textBoxPass2.Text = "";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -41,6 +42,23 @@ namespace Fashion_Velyn_Store
             string nombre = textBoxName.Text;
             string apellido = textBoxApellidos.Text;
             string password = textBoxPass.Text;
+            string password2 = textBoxPass2.Text;
+
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrEmpty(nombreUsuario) || string.IsNullOrEmpty(nombre) ||
+                string.IsNullOrEmpty(apellido) || string.IsNullOrEmpty(password) ||
+                string.IsNullOrEmpty(password2))
+            {
+                MessageBox.Show("Todos los campos son obligatorios. Por favor, completa todos los campos.");
+                return;
+            }
+
+            // Realizar la validación de las contraseñas
+            if (password != password2)
+            {
+                MessageBox.Show("Las contraseñas no coinciden. Por favor, verifica.");
+                return;
+            }
 
             DatabaseConnection dbConnection = new DatabaseConnection();
             UsuarioManager usuarioManager = new UsuarioManager(dbConnection);
@@ -50,14 +68,14 @@ namespace Fashion_Velyn_Store
             if (insertExitoso)
             {
                 MessageBox.Show("Usuario insertado exitosamente.");
-
             }
             else
             {
                 MessageBox.Show("Error al insertar usuario.");
-
             }
         }
+
+
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -85,6 +103,23 @@ namespace Fashion_Velyn_Store
         private void textBoxPass_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPass2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Main menu = new();
+            this.Hide();
+            menu.Show();
         }
     }
 }

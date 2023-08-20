@@ -43,7 +43,7 @@
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(85, 155);
+            panel1.Location = new Point(192, 163);
             panel1.Name = "panel1";
             panel1.RightToLeft = RightToLeft.Yes;
             panel1.Size = new Size(901, 300);
@@ -92,7 +92,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1102, 668);
+            ClientSize = new Size(1262, 668);
             Controls.Add(panel1);
             Name = "Main_Usuarios";
             Opacity = 0.75D;

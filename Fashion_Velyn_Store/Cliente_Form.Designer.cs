@@ -30,6 +30,7 @@
         {
             groupBox1 = new GroupBox();
             btnLimpiar = new Button();
+            button4 = new Button();
             btnAgregar = new Button();
             textBoxTipoCliente = new TextBox();
             textBoxCorreo = new TextBox();
@@ -47,13 +48,13 @@
             label2 = new Label();
             textBoxName = new TextBox();
             label1 = new Label();
-            button4 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(btnLimpiar);
+            groupBox1.Controls.Add(button4);
             groupBox1.Controls.Add(btnAgregar);
             groupBox1.Controls.Add(textBoxTipoCliente);
             groupBox1.Controls.Add(textBoxCorreo);
@@ -91,6 +92,17 @@
             btnLimpiar.UseVisualStyleBackColor = true;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
+            // button4
+            // 
+            button4.Location = new Point(514, 17);
+            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(65, 33);
+            button4.TabIndex = 4;
+            button4.Text = "Inicio";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // btnAgregar
             // 
             btnAgregar.Location = new Point(405, 504);
@@ -116,6 +128,7 @@
             textBoxCorreo.Location = new Point(175, 355);
             textBoxCorreo.Margin = new Padding(3, 4, 3, 4);
             textBoxCorreo.Name = "textBoxCorreo";
+            textBoxCorreo.PlaceholderText = "Ingrese Correo Electrónico";
             textBoxCorreo.Size = new Size(239, 27);
             textBoxCorreo.TabIndex = 19;
             textBoxCorreo.KeyDown += TextBox_KeyDown;
@@ -125,6 +138,7 @@
             textBoxReferencia.Location = new Point(130, 297);
             textBoxReferencia.Margin = new Padding(3, 4, 3, 4);
             textBoxReferencia.Name = "textBoxReferencia";
+            textBoxReferencia.PlaceholderText = "Ingrese la Referencia Domiciliar";
             textBoxReferencia.Size = new Size(284, 27);
             textBoxReferencia.TabIndex = 18;
             textBoxReferencia.KeyDown += TextBox_KeyDown;
@@ -134,6 +148,7 @@
             textBoxDireccion.Location = new Point(130, 247);
             textBoxDireccion.Margin = new Padding(3, 4, 3, 4);
             textBoxDireccion.Name = "textBoxDireccion";
+            textBoxDireccion.PlaceholderText = "Ingrese la Dirección de Residencia";
             textBoxDireccion.Size = new Size(284, 27);
             textBoxDireccion.TabIndex = 17;
             textBoxDireccion.KeyDown += TextBox_KeyDown;
@@ -143,6 +158,7 @@
             textBoxTel2.Location = new Point(312, 189);
             textBoxTel2.Margin = new Padding(3, 4, 3, 4);
             textBoxTel2.Name = "textBoxTel2";
+            textBoxTel2.PlaceholderText = "# Domiciliar";
             textBoxTel2.Size = new Size(102, 27);
             textBoxTel2.TabIndex = 16;
             textBoxTel2.KeyDown += TextBox_KeyDown;
@@ -152,6 +168,7 @@
             textBoxTel1.Location = new Point(130, 189);
             textBoxTel1.Margin = new Padding(3, 4, 3, 4);
             textBoxTel1.Name = "textBoxTel1";
+            textBoxTel1.PlaceholderText = "# Celular";
             textBoxTel1.Size = new Size(98, 27);
             textBoxTel1.TabIndex = 15;
             textBoxTel1.KeyDown += TextBox_KeyDown;
@@ -215,6 +232,7 @@
             textBoxApellidos.Location = new Point(130, 132);
             textBoxApellidos.Margin = new Padding(3, 4, 3, 4);
             textBoxApellidos.Name = "textBoxApellidos";
+            textBoxApellidos.PlaceholderText = "Ingrese Apellidos";
             textBoxApellidos.Size = new Size(284, 27);
             textBoxApellidos.TabIndex = 8;
             textBoxApellidos.KeyDown += TextBox_KeyDown;
@@ -233,6 +251,7 @@
             textBoxName.Location = new Point(130, 76);
             textBoxName.Margin = new Padding(3, 4, 3, 4);
             textBoxName.Name = "textBoxName";
+            textBoxName.PlaceholderText = "Ingrese Nombres";
             textBoxName.Size = new Size(284, 27);
             textBoxName.TabIndex = 6;
             textBoxName.TextChanged += textBoxName_TextChanged;
@@ -247,24 +266,12 @@
             label1.TabIndex = 5;
             label1.Text = "Nombres";
             // 
-            // button4
-            // 
-            button4.Location = new Point(1183, 16);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(65, 33);
-            button4.TabIndex = 4;
-            button4.Text = "Inicio";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
-            // 
             // Cliente_Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1262, 668);
             Controls.Add(groupBox1);
-            Controls.Add(button4);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Cliente_Form";
             StartPosition = FormStartPosition.CenterScreen;

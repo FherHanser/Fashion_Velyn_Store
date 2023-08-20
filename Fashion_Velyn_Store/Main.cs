@@ -37,5 +37,12 @@ namespace Fashion_Velyn_Store
             this.Hide();
             menuUsuarios.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Main menu = new();
+            this.Hide();
+            menu.Show();
+        }
     }
 }
