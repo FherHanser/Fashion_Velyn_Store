@@ -24,28 +24,14 @@ namespace Fashion_Velyn_Store
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Main_Clientes menuClientes = new();
-            //this.Hide();
-            //menuClientes.Show();
-
             AbrirFormularios<Main_Clientes>();
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //Main_Usuarios menuUsuarios = new();
-            //this.Hide();
-            //menuUsuarios.Show();
             AbrirFormularios<Main_Usuarios>();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Main menu = new();
-            this.Hide();
-            menu.Show();
-        }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
@@ -62,35 +48,18 @@ namespace Fashion_Velyn_Store
 
         }
 
-        private void AbrirFormularios<MiForm>() where MiForm : Form, new()
+        public void AbrirFormularios<MiForm>() where MiForm : Form, new()
         {
-            Form formulario;
-            formulario = panelForms.Controls.OfType<MiForm>().FirstOrDefault();
-
-            if (formulario == null)
-            {
-                formulario = new MiForm();
-                formulario.TopLevel = false;
-                formulario.Dock = DockStyle.Fill;
-                panelForms.Controls.Add(formulario);
-                panelForms.Tag = formulario;
-                formulario.Show();
-                formulario.BringToFront();
-            }
-            else
-            {
-                formulario.BringToFront();
-
-
-            }
-
-
+            Form formularioActual = panelForms.Controls.OfType<Form>().FirstOrDefault();
+            formularioActual?.Close(); // Cierra el formulario actual si existe
+            Form formulario = new MiForm();
+            formulario.TopLevel = false;
+            formulario.Dock = DockStyle.Fill;
+            panelForms.Controls.Clear(); // Limpia el panel antes de agregar el nuevo formulario
+            panelForms.Controls.Add(formulario);
+            formulario.Show();
+            formulario.BringToFront();
         }
-
-
-
-
-
 
 
     }

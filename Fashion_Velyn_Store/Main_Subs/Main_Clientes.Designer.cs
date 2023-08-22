@@ -38,6 +38,7 @@
             // panel1
             // 
             panel1.AutoSize = true;
+            panel1.BackColor = Color.Thistle;
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);

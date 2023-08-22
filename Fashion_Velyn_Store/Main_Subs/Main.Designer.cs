@@ -50,32 +50,35 @@
             // 
             // button3
             // 
+            button3.BackColor = SystemColors.ActiveCaption;
             button3.Location = new Point(2, 135);
             button3.Name = "button3";
             button3.Size = new Size(355, 60);
             button3.TabIndex = 2;
             button3.Text = "ADMINISTRACIÓN";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // button2
             // 
+            button2.BackColor = Color.Plum;
             button2.Location = new Point(3, 69);
             button2.Name = "button2";
             button2.Size = new Size(355, 60);
             button2.TabIndex = 1;
             button2.Text = "PEDIDOS";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // button1
             // 
+            button1.BackColor = Color.Thistle;
             button1.Location = new Point(3, 3);
             button1.Name = "button1";
             button1.Size = new Size(355, 60);
             button1.TabIndex = 0;
             button1.Text = "CLIENTES";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // panel2

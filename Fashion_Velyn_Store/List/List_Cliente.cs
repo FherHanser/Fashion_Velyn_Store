@@ -40,9 +40,7 @@ namespace Fashion_Velyn_Store.List
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Main inicio = new Main();
-            this.Hide();
-            inicio.Show();
+            this.Close();
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
