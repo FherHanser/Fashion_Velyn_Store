@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fashion_Velyn_Store.Class;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Fashion_Velyn_Store
 {
@@ -112,7 +113,18 @@ namespace Fashion_Velyn_Store
 
         private void textBoxPass_TextChanged(object sender, EventArgs e)
         {
+            // Mostrar el carácter durante un corto período y luego ocultarlo
+            textBoxPass.UseSystemPasswordChar = false;
 
+            Timer timer = new Timer();
+            timer.Interval = 500; // Intervalo en milisegundos (1 segundo en este caso)
+            timer.Tick += (s, ev) =>
+            {
+                textBoxPass.UseSystemPasswordChar = true;
+                timer.Stop();
+                timer.Dispose();
+            };
+            timer.Start();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -122,6 +134,18 @@ namespace Fashion_Velyn_Store
 
         private void textBoxPass2_TextChanged(object sender, EventArgs e)
         {
+            // Mostrar el carácter durante un corto período y luego ocultarlo
+            textBoxPass2.UseSystemPasswordChar = false;
+
+            Timer timer = new Timer();
+            timer.Interval = 500; // Intervalo en milisegundos (1 segundo en este caso)
+            timer.Tick += (s, ev) =>
+            {
+                textBoxPass2.UseSystemPasswordChar = true;
+                timer.Stop();
+                timer.Dispose();
+            };
+            timer.Start();
 
         }
 

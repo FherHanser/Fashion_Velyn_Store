@@ -147,7 +147,7 @@
             // 
             // textBoxUsuario
             // 
-            textBoxUsuario.Location = new Point(197, 189);
+            textBoxUsuario.Location = new Point(197, 196);
             textBoxUsuario.Margin = new Padding(3, 4, 3, 4);
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.PlaceholderText = "Defina UserName";
@@ -159,7 +159,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(37, 195);
+            label7.Location = new Point(37, 202);
             label7.Name = "label7";
             label7.Size = new Size(141, 20);
             label7.TabIndex = 13;
