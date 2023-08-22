@@ -40,7 +40,7 @@ namespace Fashion_Velyn_Store.List
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Main_Usuarios inicio = new Main_Usuarios();
+            Main inicio = new Main();
             this.Hide();
             inicio.Show();
         }

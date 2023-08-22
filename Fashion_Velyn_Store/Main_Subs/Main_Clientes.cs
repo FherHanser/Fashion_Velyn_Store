@@ -41,7 +41,6 @@ namespace Fashion_Velyn_Store
 
         private void button5_Click(object sender, EventArgs e)
         {
-
             List_Cliente registrosClientes = new List_Cliente();
             this.Hide();
             registrosClientes.Show();

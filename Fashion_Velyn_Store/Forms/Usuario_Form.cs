@@ -151,9 +151,9 @@ namespace Fashion_Velyn_Store
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Main_Usuarios menu = new();
+            Main inicio = new Main();
             this.Hide();
-            menu.Show();
+            inicio.Show();
         }
     }
 }

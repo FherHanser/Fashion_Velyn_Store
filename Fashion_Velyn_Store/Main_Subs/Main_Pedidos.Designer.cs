@@ -1,6 +1,6 @@
-﻿namespace Fashion_Velyn_Store
+﻿namespace Fashion_Velyn_Store.Main_Subs
 {
-    partial class Main_Usuarios
+    partial class Main_Pedidos
     {
         /// <summary>
         /// Required designer variable.
@@ -55,7 +55,6 @@
             button5.TabIndex = 0;
             button5.Text = "REGISTROS";
             button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
             // 
             // button2
             // 
@@ -74,25 +73,19 @@
             button1.TabIndex = 1;
             button1.Text = "NUEVO";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
-            // Main_Usuarios
+            // Main_Pedidos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(877, 618);
-            ControlBox = false;
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
-            MinimizeBox = false;
-            Name = "Main_Usuarios";
+            Name = "Main_Pedidos";
             Opacity = 0.75D;
-            ShowIcon = false;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Usuarios";
-            Load += Main_Usuarios_Load;
+            Text = "Main_Pedidos";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -101,8 +94,8 @@
         #endregion
 
         private Panel panel1;
+        private Button button5;
         private Button button2;
         private Button button1;
-        private Button button5;
     }
 }

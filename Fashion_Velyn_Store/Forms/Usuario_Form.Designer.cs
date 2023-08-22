@@ -104,7 +104,7 @@
             // 
             // textBoxPass
             // 
-            textBoxPass.Location = new Point(197, 255);
+            textBoxPass.Location = new Point(197, 262);
             textBoxPass.Margin = new Padding(3, 4, 3, 4);
             textBoxPass.Name = "textBoxPass";
             textBoxPass.PlaceholderText = "Escriba Contraseña";
@@ -117,7 +117,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(95, 259);
+            label3.Location = new Point(95, 266);
             label3.Name = "label3";
             label3.Size = new Size(83, 20);
             label3.TabIndex = 23;
@@ -147,7 +147,7 @@
             // 
             // textBoxUsuario
             // 
-            textBoxUsuario.Location = new Point(197, 196);
+            textBoxUsuario.Location = new Point(197, 204);
             textBoxUsuario.Margin = new Padding(3, 4, 3, 4);
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.PlaceholderText = "Defina UserName";
@@ -159,7 +159,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(37, 202);
+            label7.Location = new Point(37, 210);
             label7.Name = "label7";
             label7.Size = new Size(141, 20);
             label7.TabIndex = 13;
