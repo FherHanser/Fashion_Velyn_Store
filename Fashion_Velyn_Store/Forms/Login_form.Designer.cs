@@ -164,6 +164,9 @@
             ClientSize = new Size(402, 433);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
+            MinimizeBox = false;
             Name = "Login_Form";
             Opacity = 0.75D;
             StartPosition = FormStartPosition.CenterScreen;

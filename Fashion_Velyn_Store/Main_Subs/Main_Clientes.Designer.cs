@@ -30,7 +30,6 @@
         {
             panel1 = new Panel();
             button5 = new Button();
-            button2 = new Button();
             button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -40,7 +39,6 @@
             panel1.AutoSize = true;
             panel1.BackColor = Color.Thistle;
             panel1.Controls.Add(button5);
-            panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Location = new Point(0, 160);
             panel1.Name = "panel1";
@@ -50,7 +48,7 @@
             // 
             // button5
             // 
-            button5.Location = new Point(70, 70);
+            button5.Location = new Point(216, 70);
             button5.Name = "button5";
             button5.Size = new Size(175, 150);
             button5.TabIndex = 0;
@@ -58,18 +56,9 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
-            // button2
-            // 
-            button2.Location = new Point(635, 70);
-            button2.Name = "button2";
-            button2.Size = new Size(175, 150);
-            button2.TabIndex = 2;
-            button2.Text = "ACTUALIZAR";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
-            button1.Location = new Point(350, 70);
+            button1.Location = new Point(496, 70);
             button1.Name = "button1";
             button1.Size = new Size(175, 150);
             button1.TabIndex = 1;
@@ -104,7 +93,6 @@
         #endregion
 
         private Panel panel1;
-        private Button button2;
         private Button button1;
         private Button button5;
     }

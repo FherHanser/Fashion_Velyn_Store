@@ -84,8 +84,6 @@ namespace Fashion_Velyn_Store.List
             }
         }
 
-
-
         private void textBoxBuscarNombre_TextChanged(object sender, EventArgs e)
         {
 
@@ -145,5 +143,79 @@ namespace Fashion_Velyn_Store.List
             }
         }
 
+        private void dataGridViewClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica si se hace doble clic en una fila (no en los encabezados)
+            if (e.RowIndex >= 0)
+            {
+                dataGridViewClientes.ReadOnly = false; // Permite la edición
+                dataGridViewClientes.BeginEdit(true); // Inicia la edición en la celda doble clic
+            }
+        }
+
+        private void dataGridViewClientes_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridViewClientes.ReadOnly = true; // Desactiva la edición
+            dataGridViewClientes.EndEdit(); // Finaliza la edición
+
+            // Actualiza los cambios en la base de datos
+            DataRowView rowView = (DataRowView)dataGridViewClientes.Rows[e.RowIndex].DataBoundItem;
+            DataRow row = rowView.Row;
+
+            using (DatabaseConnection dbConnection = new DatabaseConnection())
+            {
+                string query = "UPDATE cliente SET nombres = @Nombres, apellidos = @Apellidos, telefono1 = @Telefono1, telefono2 = @Telefono2, direccion = @Direccion, referencia = @Referencia, correo = @Correo, clase = @Clase WHERE id_cliente = @ClienteId";
+
+                using (var command = new Microsoft.Data.Sqlite.SqliteCommand(query, dbConnection.GetConnection()))
+                {
+                    command.Parameters.AddWithValue("@Nombres", row["nombres"]);
+                    command.Parameters.AddWithValue("@Apellidos", row["apellidos"]);
+                    command.Parameters.AddWithValue("@Telefono1", row["telefono1"]);
+                    command.Parameters.AddWithValue("@Telefono2", row["telefono2"]);
+                    command.Parameters.AddWithValue("@Direccion", row["direccion"]);
+                    command.Parameters.AddWithValue("@Referencia", row["referencia"]);
+                    command.Parameters.AddWithValue("@Correo", row["correo"]);
+                    command.Parameters.AddWithValue("@Clase", row["clase"]);
+                    command.Parameters.AddWithValue("@ClienteId", row["id_cliente"]);
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Registro actualizado exitosamente.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo actualizar el registro.");
+                    }
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewClientes.SelectedRows.Count > 0)
+            {
+                // Habilita la edición en el DataGridView
+                dataGridViewClientes.ReadOnly = false;
+
+                // Desactiva la selección de filas mientras se edita
+                dataGridViewClientes.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un registro para actualizar.");
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewClientes.SelectedCells.Count > 0)
+            {
+                int rowIndex = dataGridViewClientes.SelectedCells[0].RowIndex;
+                int columnIndex = dataGridViewClientes.SelectedCells[0].ColumnIndex;
+
+                dataGridViewClientes_CellEndEdit(this, new DataGridViewCellEventArgs(columnIndex, rowIndex));
+            }
+        }
     }
 }

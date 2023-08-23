@@ -78,6 +78,7 @@ namespace Fashion_Velyn_Store
 
         }
 
+
         private void TxtBoxPass_TextChanged(object sender, EventArgs e)
         {
             // Mostrar el carácter durante un corto período y luego ocultarlo

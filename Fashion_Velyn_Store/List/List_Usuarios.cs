@@ -80,19 +80,30 @@ namespace Fashion_Velyn_Store.List
 
         }
 
+
         private void buttonBuscar_Click_1(object sender, EventArgs e)
+
         {
             string filtro = textBoxBuscarUsuario.Text.Trim();
 
             if (!string.IsNullOrEmpty(filtro))
             {
                 DataView dv = dataTable.DefaultView;
-                dv.RowFilter = $"nombre LIKE '%{filtro}%' OR apellido LIKE '%{filtro}%'";
-                dataGridViewUsuarios.DataSource = dv.ToTable();
+                dv.RowFilter = $"nombre_usuario LIKE '%{filtro}%'";
+                DataTable filteredDataTable = dv.ToTable();
+
+                if (filteredDataTable.Rows.Count > 0)
+                {
+                    dataGridViewUsuarios.DataSource = filteredDataTable;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron resultados para el nombre buscado.", "Sin Resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
-                dataGridViewUsuarios.DataSource = dataTable;
+                MessageBox.Show("Por favor, ingrese un nombre a buscar.", "Campo Vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

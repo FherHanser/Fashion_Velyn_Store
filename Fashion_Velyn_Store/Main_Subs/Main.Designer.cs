@@ -44,7 +44,7 @@
             button4.Name = "button4";
             button4.Size = new Size(355, 60);
             button4.TabIndex = 6;
-            button4.Text = "SALIR";
+            button4.Text = "CERRAR SESIÓN";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click_1;
             // 
@@ -107,6 +107,9 @@
             ClientSize = new Size(1262, 668);
             Controls.Add(panelForms);
             Controls.Add(panel2);
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
+            MinimizeBox = false;
             Name = "Main";
             Opacity = 0.75D;
             StartPosition = FormStartPosition.CenterScreen;

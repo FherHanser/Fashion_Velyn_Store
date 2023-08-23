@@ -121,6 +121,9 @@
             Controls.Add(textBoxBuscarUsuario);
             Controls.Add(dataGridViewUsuarios);
             Controls.Add(button4);
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
+            MinimizeBox = false;
             Name = "List_Usuarios";
             Opacity = 0.75D;
             StartPosition = FormStartPosition.CenterScreen;
