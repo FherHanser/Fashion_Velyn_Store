@@ -46,29 +46,35 @@
             // TxtBoxUser
             // 
             TxtBoxUser.BackColor = SystemColors.InactiveBorder;
-            TxtBoxUser.Location = new Point(168, 58);
+            TxtBoxUser.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            TxtBoxUser.Location = new Point(147, 44);
+            TxtBoxUser.Margin = new Padding(3, 2, 3, 2);
             TxtBoxUser.Name = "TxtBoxUser";
             TxtBoxUser.PlaceholderText = "Usuario en el sistema";
-            TxtBoxUser.Size = new Size(151, 27);
+            TxtBoxUser.Size = new Size(133, 21);
             TxtBoxUser.TabIndex = 0;
             TxtBoxUser.TextChanged += TxtBoxUser_TextChanged;
             TxtBoxUser.KeyDown += TextBox_KeyDown;
             // 
             // TxtBoxPass
             // 
-            TxtBoxPass.Location = new Point(168, 109);
+            TxtBoxPass.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            TxtBoxPass.Location = new Point(147, 82);
+            TxtBoxPass.Margin = new Padding(3, 2, 3, 2);
             TxtBoxPass.Name = "TxtBoxPass";
             TxtBoxPass.PlaceholderText = "Contraseña";
-            TxtBoxPass.Size = new Size(151, 27);
+            TxtBoxPass.Size = new Size(133, 21);
             TxtBoxPass.TabIndex = 1;
             TxtBoxPass.TextChanged += TxtBoxPass_TextChanged;
             TxtBoxPass.KeyDown += TextBox_KeyDown;
             // 
             // button1
             // 
-            button1.Location = new Point(223, 176);
+            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(195, 132);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(96, 37);
+            button1.Size = new Size(84, 28);
             button1.TabIndex = 2;
             button1.Text = "Ingresar";
             button1.UseVisualStyleBackColor = true;
@@ -83,28 +89,31 @@
             panel1.Controls.Add(TxtBoxUser);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(TxtBoxPass);
-            panel1.Location = new Point(12, 63);
+            panel1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            panel1.Location = new Point(10, 47);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(378, 284);
+            panel1.Size = new Size(331, 213);
             panel1.TabIndex = 3;
             // 
             // labelError
             // 
             labelError.AutoSize = true;
+            labelError.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             labelError.ForeColor = Color.IndianRed;
-            labelError.Location = new Point(85, 239);
+            labelError.Location = new Point(74, 179);
             labelError.Name = "labelError";
-            labelError.Size = new Size(64, 20);
+            labelError.Size = new Size(62, 15);
             labelError.TabIndex = 8;
             labelError.Text = "Mensaje";
             labelError.Visible = false;
             // 
             // button4
             // 
-            button4.Location = new Point(121, 176);
-            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.Location = new Point(106, 132);
             button4.Name = "button4";
-            button4.Size = new Size(96, 37);
+            button4.Size = new Size(84, 28);
             button4.TabIndex = 7;
             button4.Text = "Cancelar";
             button4.UseVisualStyleBackColor = true;
@@ -113,18 +122,20 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(73, 109);
+            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(64, 82);
             label2.Name = "label2";
-            label2.Size = new Size(70, 20);
+            label2.Size = new Size(61, 15);
             label2.TabIndex = 5;
             label2.Text = "Password";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(85, 61);
+            label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(74, 46);
             label1.Name = "label1";
-            label1.Size = new Size(59, 20);
+            label1.Size = new Size(50, 15);
             label1.TabIndex = 4;
             label1.Text = "Usuario";
             // 
@@ -132,18 +143,19 @@
             // 
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
-            panel2.Location = new Point(12, 394);
+            panel2.Location = new Point(10, 296);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(378, 27);
+            panel2.Size = new Size(331, 20);
             panel2.TabIndex = 4;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Black", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(272, 6);
+            label4.Location = new Point(238, 4);
             label4.Name = "label4";
-            label4.Size = new Size(104, 17);
+            label4.Size = new Size(87, 13);
             label4.TabIndex = 11;
             label4.Text = "SMART MEDIA";
             // 
@@ -151,19 +163,20 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 7.8F, FontStyle.Italic, GraphicsUnit.Point);
-            label3.Location = new Point(175, 5);
+            label3.Location = new Point(153, 4);
             label3.Name = "label3";
-            label3.Size = new Size(102, 17);
+            label3.Size = new Size(87, 13);
             label3.TabIndex = 10;
             label3.Text = "Desarrollado por";
             // 
             // Login_Form
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(402, 433);
+            ClientSize = new Size(352, 325);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;

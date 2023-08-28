@@ -48,6 +48,11 @@ namespace Fashion_Velyn_Store
 
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios<Main_Informes>();
+        }
+
         public void AbrirFormularios<MiForm>() where MiForm : Form, new()
         {
             Form formularioActual = panelForms.Controls.OfType<Form>().FirstOrDefault();

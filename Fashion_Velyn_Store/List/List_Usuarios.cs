@@ -146,6 +146,10 @@ namespace Fashion_Velyn_Store.List
             }
         }
 
+        private void dataGridViewUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 
