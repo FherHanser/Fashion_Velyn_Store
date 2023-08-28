@@ -276,7 +276,6 @@
             ClientSize = new Size(1104, 501);
             Controls.Add(groupBox1);
             Name = "Cliente_Form";
-            Opacity = 0.75D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Nuevo Cliente";
             Load += Cliente_Form_Load;

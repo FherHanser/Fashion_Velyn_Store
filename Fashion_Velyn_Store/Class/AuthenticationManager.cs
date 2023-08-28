@@ -14,23 +14,33 @@ namespace Fashion_Velyn_Store.Class
 
         public string GetNameByCredentials(string nombreUsuario, string password)
         {
-            using var connection = dbConnection.GetConnection();
-
-            using var command = connection.CreateCommand();
-            command.CommandText =
-            @"SELECT nombre || ' ' || apellido
-              FROM usuarios
-              WHERE nombre_usuario = @nombreUsuario AND password = @password";
-            command.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
-            command.Parameters.AddWithValue("@password", password);
-
-            using var reader = command.ExecuteReader();
-            if (reader.Read())
+            using (var connection = dbConnection.GetConnection())
             {
-                return reader.GetString(0);
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText =
+                        @"SELECT nombre || ' ' || apellido
+                  FROM usuarios
+                  WHERE nombre_usuario = @nombreUsuario AND password = @password";
+
+                    // Usar parámetros para evitar problemas de seguridad y rendimiento
+                    command.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
+                    command.Parameters.AddWithValue("@password", password);
+
+                    connection.Open();
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return reader.GetString(0);
+                        }
+                    }
+                }
             }
 
             return null;
         }
+
     }
 }

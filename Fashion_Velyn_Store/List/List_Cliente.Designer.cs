@@ -197,7 +197,6 @@
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             Name = "List_Cliente";
-            Opacity = 0.75D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registros";
             Load += List_Cliente_Load;

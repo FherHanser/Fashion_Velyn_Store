@@ -40,10 +40,9 @@
             // 
             // button4
             // 
-            button4.Location = new Point(1155, 58);
-            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Location = new Point(1011, 44);
             button4.Name = "button4";
-            button4.Size = new Size(65, 33);
+            button4.Size = new Size(57, 25);
             button4.TabIndex = 5;
             button4.Text = "Menú";
             button4.UseVisualStyleBackColor = true;
@@ -53,19 +52,21 @@
             // 
             dataGridViewUsuarios.BackgroundColor = SystemColors.ActiveCaption;
             dataGridViewUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewUsuarios.Location = new Point(311, 201);
+            dataGridViewUsuarios.Location = new Point(272, 151);
+            dataGridViewUsuarios.Margin = new Padding(3, 2, 3, 2);
             dataGridViewUsuarios.Name = "dataGridViewUsuarios";
             dataGridViewUsuarios.RowHeadersWidth = 51;
             dataGridViewUsuarios.RowTemplate.Height = 29;
-            dataGridViewUsuarios.Size = new Size(631, 347);
+            dataGridViewUsuarios.Size = new Size(552, 260);
             dataGridViewUsuarios.TabIndex = 6;
             dataGridViewUsuarios.CellContentClick += dataGridViewUsuarios_CellContentClick;
             // 
             // button1
             // 
-            button1.Location = new Point(648, 85);
+            button1.Location = new Point(567, 64);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(95, 30);
+            button1.Size = new Size(83, 22);
             button1.TabIndex = 15;
             button1.Text = "Limpiar";
             button1.UseVisualStyleBackColor = true;
@@ -73,9 +74,10 @@
             // 
             // buttonBuscar
             // 
-            buttonBuscar.Location = new Point(420, 85);
+            buttonBuscar.Location = new Point(368, 64);
+            buttonBuscar.Margin = new Padding(3, 2, 3, 2);
             buttonBuscar.Name = "buttonBuscar";
-            buttonBuscar.Size = new Size(95, 30);
+            buttonBuscar.Size = new Size(83, 22);
             buttonBuscar.TabIndex = 14;
             buttonBuscar.Text = "Buscar";
             buttonBuscar.UseVisualStyleBackColor = true;
@@ -84,18 +86,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(118, 89);
+            label1.Location = new Point(103, 67);
             label1.Name = "label1";
-            label1.Size = new Size(52, 20);
+            label1.Size = new Size(42, 15);
             label1.TabIndex = 13;
             label1.Text = "Buscar";
             // 
             // textBoxBuscarUsuario
             // 
-            textBoxBuscarUsuario.Location = new Point(185, 86);
+            textBoxBuscarUsuario.Location = new Point(162, 64);
+            textBoxBuscarUsuario.Margin = new Padding(3, 2, 3, 2);
             textBoxBuscarUsuario.Name = "textBoxBuscarUsuario";
             textBoxBuscarUsuario.PlaceholderText = "Ingresa Nombre del Usuario";
-            textBoxBuscarUsuario.Size = new Size(217, 27);
+            textBoxBuscarUsuario.Size = new Size(190, 23);
             textBoxBuscarUsuario.TabIndex = 12;
             textBoxBuscarUsuario.TextChanged += textBoxBuscarUsuario_TextChanged;
             textBoxBuscarUsuario.KeyDown += TextBox_KeyDown;
@@ -103,9 +106,10 @@
             // btnEliminarUsuario
             // 
             btnEliminarUsuario.ForeColor = SystemColors.ControlText;
-            btnEliminarUsuario.Location = new Point(534, 85);
+            btnEliminarUsuario.Location = new Point(467, 64);
+            btnEliminarUsuario.Margin = new Padding(3, 2, 3, 2);
             btnEliminarUsuario.Name = "btnEliminarUsuario";
-            btnEliminarUsuario.Size = new Size(95, 30);
+            btnEliminarUsuario.Size = new Size(83, 22);
             btnEliminarUsuario.TabIndex = 16;
             btnEliminarUsuario.Text = "Eliminar";
             btnEliminarUsuario.UseVisualStyleBackColor = true;
@@ -113,9 +117,9 @@
             // 
             // List_Usuarios
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1262, 668);
+            ClientSize = new Size(1104, 501);
             Controls.Add(btnEliminarUsuario);
             Controls.Add(button1);
             Controls.Add(buttonBuscar);
@@ -123,11 +127,11 @@
             Controls.Add(textBoxBuscarUsuario);
             Controls.Add(dataGridViewUsuarios);
             Controls.Add(button4);
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             Name = "List_Usuarios";
-            Opacity = 0.75D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registros";
             Load += List_Usuarios_Load;

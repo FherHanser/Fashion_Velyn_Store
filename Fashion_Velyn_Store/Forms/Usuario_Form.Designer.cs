@@ -205,7 +205,6 @@
             Controls.Add(groupBox1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Usuario_Form";
-            Opacity = 0.75D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Nuevo Usuario";
             Load += Usuario_Form_Load;
