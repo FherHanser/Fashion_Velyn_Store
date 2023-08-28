@@ -51,6 +51,7 @@
             // 
             // dataGridViewUsuarios
             // 
+            dataGridViewUsuarios.BackgroundColor = SystemColors.ActiveCaption;
             dataGridViewUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewUsuarios.Location = new Point(311, 201);
             dataGridViewUsuarios.Name = "dataGridViewUsuarios";
@@ -58,12 +59,13 @@
             dataGridViewUsuarios.RowTemplate.Height = 29;
             dataGridViewUsuarios.Size = new Size(631, 347);
             dataGridViewUsuarios.TabIndex = 6;
+            dataGridViewUsuarios.CellContentClick += dataGridViewUsuarios_CellContentClick;
             // 
             // button1
             // 
-            button1.Location = new Point(647, 86);
+            button1.Location = new Point(648, 85);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(95, 30);
             button1.TabIndex = 15;
             button1.Text = "Limpiar";
             button1.UseVisualStyleBackColor = true;
@@ -73,7 +75,7 @@
             // 
             buttonBuscar.Location = new Point(420, 85);
             buttonBuscar.Name = "buttonBuscar";
-            buttonBuscar.Size = new Size(94, 29);
+            buttonBuscar.Size = new Size(95, 30);
             buttonBuscar.TabIndex = 14;
             buttonBuscar.Text = "Buscar";
             buttonBuscar.UseVisualStyleBackColor = true;
@@ -121,6 +123,9 @@
             Controls.Add(textBoxBuscarUsuario);
             Controls.Add(dataGridViewUsuarios);
             Controls.Add(button4);
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
+            MinimizeBox = false;
             Name = "List_Usuarios";
             Opacity = 0.75D;
             StartPosition = FormStartPosition.CenterScreen;

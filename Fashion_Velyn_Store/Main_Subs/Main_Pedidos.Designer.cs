@@ -1,6 +1,6 @@
-﻿namespace Fashion_Velyn_Store
+﻿namespace Fashion_Velyn_Store.Main_Subs
 {
-    partial class Main_Usuarios
+    partial class Main_Pedidos
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,7 @@
             // panel1
             // 
             panel1.AutoSize = true;
-            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.BackColor = Color.Plum;
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button1);
             panel1.Location = new Point(0, 120);
@@ -57,7 +57,6 @@
             button5.TabIndex = 0;
             button5.Text = "REGISTROS";
             button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
             // 
             // button1
             // 
@@ -69,26 +68,20 @@
             button1.TabIndex = 1;
             button1.Text = "NUEVO";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
-            // Main_Usuarios
+            // Main_Pedidos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(767, 464);
-            ControlBox = false;
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
-            MinimizeBox = false;
-            Name = "Main_Usuarios";
+            Name = "Main_Pedidos";
             Opacity = 0.75D;
-            ShowIcon = false;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Usuarios";
-            Load += Main_Usuarios_Load;
+            Text = "Main_Pedidos";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -97,7 +90,7 @@
         #endregion
 
         private Panel panel1;
-        private Button button1;
         private Button button5;
+        private Button button1;
     }
 }

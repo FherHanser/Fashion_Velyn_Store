@@ -30,8 +30,6 @@
         {
             panel1 = new Panel();
             button5 = new Button();
-            button4 = new Button();
-            button2 = new Button();
             button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -39,51 +37,35 @@
             // panel1
             // 
             panel1.AutoSize = true;
+            panel1.BackColor = Color.Thistle;
             panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(170, 190);
+            panel1.Location = new Point(0, 120);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.RightToLeft = RightToLeft.Yes;
-            panel1.Size = new Size(900, 300);
+            panel1.Size = new Size(766, 225);
             panel1.TabIndex = 1;
             // 
             // button5
             // 
-            button5.Location = new Point(81, 70);
+            button5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button5.Location = new Point(189, 52);
+            button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
-            button5.Size = new Size(175, 150);
+            button5.Size = new Size(153, 112);
             button5.TabIndex = 0;
             button5.Text = "REGISTROS";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
-            // button4
-            // 
-            button4.Location = new Point(822, 261);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(65, 33);
-            button4.TabIndex = 4;
-            button4.Text = "Inicio";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(645, 70);
-            button2.Name = "button2";
-            button2.Size = new Size(175, 150);
-            button2.TabIndex = 2;
-            button2.Text = "ACTUALIZAR";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
-            button1.Location = new Point(360, 70);
+            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(434, 52);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(175, 150);
+            button1.Size = new Size(153, 112);
             button1.TabIndex = 1;
             button1.Text = "NUEVO";
             button1.UseVisualStyleBackColor = true;
@@ -91,13 +73,19 @@
             // 
             // Main_Clientes
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1262, 668);
+            ClientSize = new Size(767, 464);
+            ControlBox = false;
             Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
+            MinimizeBox = false;
             Name = "Main_Clientes";
             Opacity = 0.75D;
+            ShowIcon = false;
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Clientes";
             Load += Main_Clientes_Load;
@@ -109,9 +97,7 @@
         #endregion
 
         private Panel panel1;
-        private Button button2;
         private Button button1;
-        private Button button4;
         private Button button5;
     }
 }
