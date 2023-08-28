@@ -45,7 +45,7 @@
             button4.Location = new Point(3, 218);
             button4.Name = "button4";
             button4.Size = new Size(311, 45);
-            button4.TabIndex = 6;
+            button4.TabIndex = 4;
             button4.Text = "CERRAR SESIÓN";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click_1;
@@ -59,7 +59,7 @@
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(311, 45);
-            button3.TabIndex = 2;
+            button3.TabIndex = 3;
             button3.Text = "USUARIOS";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
@@ -114,7 +114,7 @@
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(311, 45);
-            button5.TabIndex = 7;
+            button5.TabIndex = 2;
             button5.Text = "INFORMES";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
@@ -140,7 +140,6 @@
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             Name = "Main";
-            Opacity = 0.75D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menú Inicio";
             Load += Main_Load;

@@ -181,7 +181,6 @@
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             Name = "Login_Form";
-            Opacity = 0.75D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio";
             TransparencyKey = Color.FromArgb(255, 128, 255);

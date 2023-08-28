@@ -1,16 +1,24 @@
 ﻿using System;
 using System.Windows.Forms;
+using Fashion_Velyn_Store.Class;
 using Fashion_Velyn_Store.Main_Subs;
+using Fashion_Velyn_Store.Class;
 using SQLitePCL;
 
 namespace Fashion_Velyn_Store
 {
     public partial class Main : Form
     {
+
+
+
         public Main()
         {
             InitializeComponent();
+
+            this.Load += Main_Load; // Asociar el evento Load al manejador Main_Load
         }
+
 
         private void Main_Load(object sender, EventArgs e)
         {
@@ -19,17 +27,17 @@ namespace Fashion_Velyn_Store
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AbrirFormularios<Main_Pedidos>();
+            PanelManager.AbrirFormularios<Main_Pedidos>(panelForms);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AbrirFormularios<Main_Clientes>();
+            PanelManager.AbrirFormularios<Main_Clientes>(panelForms);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AbrirFormularios<Main_Usuarios>();
+            PanelManager.AbrirFormularios<Main_Usuarios>(panelForms);
         }
 
 
@@ -50,20 +58,7 @@ namespace Fashion_Velyn_Store
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AbrirFormularios<Main_Informes>();
-        }
-
-        public void AbrirFormularios<MiForm>() where MiForm : Form, new()
-        {
-            Form formularioActual = panelForms.Controls.OfType<Form>().FirstOrDefault();
-            formularioActual?.Close(); // Cierra el formulario actual si existe
-            Form formulario = new MiForm();
-            formulario.TopLevel = false;
-            formulario.Dock = DockStyle.Fill;
-            panelForms.Controls.Clear(); // Limpia el panel antes de agregar el nuevo formulario
-            panelForms.Controls.Add(formulario);
-            formulario.Show();
-            formulario.BringToFront();
+            PanelManager.AbrirFormularios<Main_Informes>(panelForms);
         }
 
 

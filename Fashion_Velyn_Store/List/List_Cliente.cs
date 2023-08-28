@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using Fashion_Velyn_Store.Class;
 
+
 namespace Fashion_Velyn_Store.List
 {
     public partial class List_Cliente : Form
@@ -40,7 +41,9 @@ namespace Fashion_Velyn_Store.List
 
         private void button4_Click(object sender, EventArgs e)
         {
+
             this.Close();
+
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
@@ -217,5 +220,10 @@ namespace Fashion_Velyn_Store.List
                 dataGridViewClientes_CellEndEdit(this, new DataGridViewCellEventArgs(columnIndex, rowIndex));
             }
         }
+        private void panelForms_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }

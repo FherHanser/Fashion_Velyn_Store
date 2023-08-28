@@ -50,7 +50,7 @@
             // button5
             // 
             button5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.Location = new Point(189, 52);
+            button5.Location = new Point(435, 50);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(153, 112);
@@ -61,7 +61,7 @@
             // button1
             // 
             button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(434, 52);
+            button1.Location = new Point(190, 50);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(153, 112);
