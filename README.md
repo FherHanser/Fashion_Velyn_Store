@@ -25,9 +25,10 @@ Este es un sistema de control de ventas desarrollado en C# con .NET Framework 6 
 ## Uso
 
 1. Inicia la aplicación.
-2. Accede a los módulos de clientes, usuarios, pedidos e informes a través del menú principal.
-3. Agrega, edita o elimina información según sea necesario en cada módulo.
-4. Genera pedidos y realiza ventas utilizando el módulo correspondiente.
+2. El password de pruebas es: usuario = admin y password = admin
+3. Accede a los módulos de clientes, usuarios, pedidos e informes a través del menú principal y crea registros.
+4. Edita o elimina información en los módulos de usuario, clientes y pedidos, en registros.
+5. Genera pedidos y realiza ventas utilizando el módulo de pedidos.
 
 ## Contribución
 
