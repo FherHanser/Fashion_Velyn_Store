@@ -13,31 +13,41 @@ namespace Fashion_Velyn_Store.Class
             dbConnection = connection;
         }
 
-        public bool AuthenticateUser(string nombreUsuario, string password)
+        public bool AuthenticateUser(string nombreUsuario, string password, out string nombreCompleto)
         {
+            nombreCompleto = null; // Inicializar el nombre completo
+
             using (var connection = dbConnection.GetConnection())
             {
                 try
                 {
                     using (var command = connection.CreateCommand())
                     {
-                        command.CommandText = @"SELECT password FROM usuarios WHERE nombre_usuario = @nombreUsuario";
+                        command.CommandText = @"SELECT password, nombre_completo FROM usuarios WHERE nombre_usuario = @nombreUsuario";
                         command.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
 
                         connection.Open();
 
-                        var hashedPasswordFromDB = (string)command.ExecuteScalar();
+                        using (var reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string hashedPasswordFromDB = reader.GetString(0);
+                                string nombreCompletoFromDB = reader.GetString(1);
 
-                        if (hashedPasswordFromDB != null)
-                        {
-                            string hashedPasswordInput = HashPassword(password);
-                            return hashedPasswordInput == hashedPasswordFromDB;
-                        }
-                        else
-                        {
-                            return false; // El usuario no existe en la base de datos
+                                PasswordHasher hasher = new PasswordHasher();
+                                string hashedPasswordInput = hasher.HashPassword(password);
+
+                                if (hashedPasswordInput == hashedPasswordFromDB)
+                                {
+                                    nombreCompleto = nombreCompletoFromDB;
+                                    return true; // Autenticación exitosa
+                                }
+                            }
                         }
                     }
+
+                    return false; // Credenciales inválidas
                 }
                 catch (Exception ex)
                 {
@@ -47,16 +57,6 @@ namespace Fashion_Velyn_Store.Class
             }
         }
 
-        private string HashPassword(string password)
-        {
-            using (System.Security.Cryptography.SHA256 sha256 = System.Security.Cryptography.SHA256.Create())
-            {
-                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
-            }
-        }
     }
-
-
 }
 

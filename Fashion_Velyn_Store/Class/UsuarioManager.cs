@@ -21,8 +21,8 @@ namespace Fashion_Velyn_Store.Class
                 {
                     using (var command = connection.CreateCommand())
                     {
-                        // Generar el hash de la contraseña
-                        string hashedPassword = HashPassword(password);
+                        PasswordHasher hasher = new PasswordHasher();
+                        string hashedPassword = hasher.HashPassword(password);
 
                         command.CommandText =
                             @"INSERT INTO usuarios (nombre_usuario, nombre, apellido, password)
@@ -56,14 +56,6 @@ namespace Fashion_Velyn_Store.Class
             }
         }
 
-        private string HashPassword(string password)
-        {
-            using (System.Security.Cryptography.SHA256 sha256 = System.Security.Cryptography.SHA256.Create())
-            {
-                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
-            }
-        }
 
 
     }
