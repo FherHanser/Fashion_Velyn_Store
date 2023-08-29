@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -10,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fashion_Velyn_Store.Class;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using Timer = System.Windows.Forms.Timer;
 
 namespace Fashion_Velyn_Store
@@ -27,40 +25,36 @@ namespace Fashion_Velyn_Store
 
         }
 
-        public bool AuthenticateUser(string nombreUsuario, string password)
+        private void button1_Click(object sender, EventArgs e)
         {
-            using (var connection = dbConnection.GetConnection())
+            DatabaseConnection dbConnection = new DatabaseConnection();
+            AuthenticationManager authManager = new AuthenticationManager(dbConnection);
+
+            string nombreUsuario = TxtBoxUser.Text;
+            string password = TxtBoxPass.Text;
+
+            if (string.IsNullOrWhiteSpace(nombreUsuario) || string.IsNullOrWhiteSpace(password))
             {
-                try
+                ErrorLabelManager.MostrarError("Ingrese el nombre de usuario y la contraseña", labelError);
+            }
+            else
+            {
+                labelError.Visible = false;
+
+                if (authManager.AuthenticateUser(nombreUsuario, password))
                 {
-                    using (var command = connection.CreateCommand())
-                    {
-                        command.CommandText = @"SELECT password FROM usuarios WHERE nombre_usuario = @nombreUsuario";
-                        command.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
-
-                        connection.Open();
-
-                        var hashedPasswordFromDB = (string)command.ExecuteScalar();
-
-                        if (hashedPasswordFromDB != null)
-                        {
-                            PasswordHasher hasher = new PasswordHasher();
-                            string hashedPasswordInput = hasher.HashPassword(password);
-                            return hashedPasswordInput == hashedPasswordFromDB;
-                        }
-                        else
-                        {
-                            return false; // El usuario no existe en la base de datos
-                        }
-                    }
+                    MessageBox.Show($"Inicio de sesión exitoso para el usuario {nombreUsuario}");
+                    Main consulta = new Main();
+                    this.Hide();
+                    consulta.Show();
                 }
-                catch (Exception ex)
+                else
                 {
-                    Console.WriteLine("Error de autenticación: " + ex.Message);
-                    return false;
+                    MessageBox.Show("Credenciales inválidas");
                 }
             }
         }
+
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
