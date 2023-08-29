@@ -30,7 +30,8 @@ namespace Fashion_Velyn_Store.Class
 
                         if (hashedPasswordFromDB != null)
                         {
-                            string hashedPasswordInput = HashPassword(password);
+                            PasswordHasher hasher = new PasswordHasher();
+                            string hashedPasswordInput = hasher.HashPassword(password);
                             return hashedPasswordInput == hashedPasswordFromDB;
                         }
                         else
@@ -47,16 +48,7 @@ namespace Fashion_Velyn_Store.Class
             }
         }
 
-        private string HashPassword(string password)
-        {
-            using (System.Security.Cryptography.SHA256 sha256 = System.Security.Cryptography.SHA256.Create())
-            {
-                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
-            }
-        }
     }
-
-
 }
+
 
