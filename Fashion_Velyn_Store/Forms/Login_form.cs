@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fashion_Velyn_Store.Class;
+using Fashion_Velyn_Store.Main_Subs;
+using Microsoft.Data.Sqlite;
 using Timer = System.Windows.Forms.Timer;
 
 namespace Fashion_Velyn_Store
@@ -41,20 +43,23 @@ namespace Fashion_Velyn_Store
             {
                 labelError.Visible = false;
 
-                if (authManager.AuthenticateUser(nombreUsuario, password))
+                if (authManager.AuthenticateUser(nombreUsuario, password, out var nombreCompleto))
                 {
-                    MessageBox.Show($"Inicio de sesión exitoso para el usuario {nombreUsuario}");
-                    Main consulta = new Main();
                     this.Hide();
-                    consulta.Show();
+                    Main_Bienvenido bienvenido = new Main_Bienvenido();
+                    bienvenido.NombreCompleto = nombreCompleto; // Asigna el nombre completo al formulario de bienvenida
+                    bienvenido.ShowDialog();
+                    Main inicio = new Main();
+                    inicio.Show();
                 }
+
+
                 else
                 {
                     MessageBox.Show("Credenciales inválidas");
                 }
             }
         }
-
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -86,10 +91,8 @@ namespace Fashion_Velyn_Store
             timer.Start();
         }
 
-
         private void button4_Click(object sender, EventArgs e)
         {
-            // Cerrar la aplicación
             Application.Exit();
         }
 

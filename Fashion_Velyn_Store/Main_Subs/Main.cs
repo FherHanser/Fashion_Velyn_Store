@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using Fashion_Velyn_Store.Class;
 using Fashion_Velyn_Store.Main_Subs;
-using Fashion_Velyn_Store.Class;
 using SQLitePCL;
 
 namespace Fashion_Velyn_Store
@@ -10,15 +9,12 @@ namespace Fashion_Velyn_Store
     public partial class Main : Form
     {
 
-
-
         public Main()
         {
             InitializeComponent();
 
             this.Load += Main_Load; // Asociar el evento Load al manejador Main_Load
         }
-
 
         private void Main_Load(object sender, EventArgs e)
         {
@@ -60,7 +56,6 @@ namespace Fashion_Velyn_Store
         {
             PanelManager.AbrirFormularios<Main_Informes>(panelForms);
         }
-
 
     }
 }

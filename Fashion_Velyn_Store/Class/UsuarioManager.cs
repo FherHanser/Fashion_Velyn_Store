@@ -56,7 +56,5 @@ namespace Fashion_Velyn_Store.Class
             }
         }
 
-
-
     }
 }
