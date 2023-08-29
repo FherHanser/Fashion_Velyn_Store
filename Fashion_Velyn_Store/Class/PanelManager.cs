@@ -8,7 +8,6 @@ namespace Fashion_Velyn_Store.Class
 {
 public static class PanelManager
     {
-
         public static void AbrirFormularios<MiForm>(Panel panelForms) where MiForm : Form, new()
         {
             Form formularioActual = panelForms.Controls.OfType<Form>().FirstOrDefault();

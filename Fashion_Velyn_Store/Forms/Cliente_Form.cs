@@ -43,13 +43,14 @@ namespace Fashion_Velyn_Store
                 string.IsNullOrWhiteSpace(textBoxTipoCliente.Text))
             {
                 errorMessage = "Todos los campos deben ir llenos, excepto correo y teléfono 2.";
-                msgError(errorMessage);
+                ErrorLabelManager.MostrarError(errorMessage, labelError);
                 return;
             }
             else
             {
-                labelError.Visible = false; // Hacer invisible el labelError si todos los campos requeridos están llenos
+                labelError.Visible = false; 
             }
+
 
             Cliente nuevoCliente = new Cliente
             {
@@ -78,12 +79,6 @@ namespace Fashion_Velyn_Store
                 MessageBox.Show("No se Registró un Nuevo Cliente");
                 LimpiarCasillas();
             }
-        }
-
-        private void msgError(string msg)
-        {
-            labelError.Text = msg;
-            labelError.Visible = true;
         }
 
 
@@ -123,5 +118,20 @@ namespace Fashion_Velyn_Store
             textBoxTipoCliente.Text = "";
         }
 
+        private void textBoxTel1_TextChanged(object sender, EventArgs e)
+        {
+            ErrorLabelManager.ValidarNumericInput(textBoxTel1, 8);
+
+        }
+
+
+        private void labelError_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void textBoxTel2_TextChanged(object sender, EventArgs e)
+        {
+            ErrorLabelManager.ValidarNumericInput(textBoxTel2, 8);
+        }
     }
 }
