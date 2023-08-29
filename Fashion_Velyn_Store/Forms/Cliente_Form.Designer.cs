@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            labelMensaje = new Label();
             labelError = new Label();
             btnLimpiar = new Button();
             button4 = new Button();
@@ -55,6 +56,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Thistle;
+            groupBox1.Controls.Add(labelMensaje);
             groupBox1.Controls.Add(labelError);
             groupBox1.Controls.Add(btnLimpiar);
             groupBox1.Controls.Add(button4);
@@ -83,6 +85,17 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Información del Nuevo Cliente";
             // 
+            // labelMensaje
+            // 
+            labelMensaje.AutoSize = true;
+            labelMensaje.ForeColor = Color.IndianRed;
+            labelMensaje.Location = new Point(114, 166);
+            labelMensaje.Name = "labelMensaje";
+            labelMensaje.Size = new Size(55, 15);
+            labelMensaje.TabIndex = 24;
+            labelMensaje.Text = "Mensaje";
+            labelMensaje.Visible = false;
+            // 
             // labelError
             // 
             labelError.AutoSize = true;
@@ -93,6 +106,7 @@
             labelError.TabIndex = 23;
             labelError.Text = "Mensaje";
             labelError.Visible = false;
+            labelError.Click += labelError_Click;
             // 
             // btnLimpiar
             // 
@@ -167,6 +181,7 @@
             textBoxTel2.PlaceholderText = "# Domiciliar";
             textBoxTel2.Size = new Size(90, 21);
             textBoxTel2.TabIndex = 16;
+            textBoxTel2.TextChanged += textBoxTel2_TextChanged;
             textBoxTel2.KeyDown += TextBox_KeyDown;
             // 
             // textBoxTel1
@@ -176,6 +191,7 @@
             textBoxTel1.PlaceholderText = "# Celular";
             textBoxTel1.Size = new Size(86, 21);
             textBoxTel1.TabIndex = 15;
+            textBoxTel1.TextChanged += textBoxTel1_TextChanged;
             textBoxTel1.KeyDown += TextBox_KeyDown;
             // 
             // label8
@@ -307,5 +323,6 @@
         private Button btnAgregar;
         private Button btnLimpiar;
         private Label labelError;
+        private Label labelMensaje;
     }
 }

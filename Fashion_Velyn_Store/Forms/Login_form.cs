@@ -30,21 +30,20 @@ namespace Fashion_Velyn_Store
             DatabaseConnection dbConnection = new DatabaseConnection();
             AuthenticationManager authManager = new AuthenticationManager(dbConnection);
 
-            string nombreCompleto = authManager.GetNameByCredentials(TxtBoxUser.Text, TxtBoxPass.Text);
+            string nombreUsuario = TxtBoxUser.Text;
+            string password = TxtBoxPass.Text;
 
-            if (string.IsNullOrWhiteSpace(TxtBoxUser.Text))
+            if (string.IsNullOrWhiteSpace(nombreUsuario) || string.IsNullOrWhiteSpace(password))
             {
-                msgError("Ingrese el nombre de usuario");
-            }
-            else if (string.IsNullOrWhiteSpace(TxtBoxPass.Text))
-            {
-                msgError("Ingrese la contraseña");
+                ErrorLabelManager.MostrarError("Ingrese el nombre de usuario y la contraseña", labelError);
             }
             else
             {
-                if (nombreCompleto != null)
+                labelError.Visible = false;
+
+                if (authManager.AuthenticateUser(nombreUsuario, password))
                 {
-                    MessageBox.Show($"Bienvenido, {nombreCompleto}"); // Mostrar mensaje de bienvenida con el nombre del usuario
+                    MessageBox.Show($"Inicio de sesión exitoso para el usuario {nombreUsuario}");
                     Main consulta = new Main();
                     this.Hide();
                     consulta.Show();
@@ -55,13 +54,6 @@ namespace Fashion_Velyn_Store
                 }
             }
         }
-
-        private void msgError(string msg)
-        {
-            labelError.Text = msg;
-            labelError.Visible = true;
-        }
-
 
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
@@ -77,7 +69,6 @@ namespace Fashion_Velyn_Store
         {
 
         }
-
 
         private void TxtBoxPass_TextChanged(object sender, EventArgs e)
         {

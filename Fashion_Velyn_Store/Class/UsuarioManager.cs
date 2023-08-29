@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
 using System;
+using System.Text;
 
 namespace Fashion_Velyn_Store.Class
 {
@@ -20,6 +21,9 @@ namespace Fashion_Velyn_Store.Class
                 {
                     using (var command = connection.CreateCommand())
                     {
+                        // Generar el hash de la contraseña
+                        string hashedPassword = HashPassword(password);
+
                         command.CommandText =
                             @"INSERT INTO usuarios (nombre_usuario, nombre, apellido, password)
                       VALUES (@nombreUsuario, @nombre, @apellido, @password)";
@@ -27,7 +31,7 @@ namespace Fashion_Velyn_Store.Class
                         command.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
                         command.Parameters.AddWithValue("@nombre", nombre);
                         command.Parameters.AddWithValue("@apellido", apellido);
-                        command.Parameters.AddWithValue("@password", password);
+                        command.Parameters.AddWithValue("@password", hashedPassword);
 
                         connection.Open();
 
@@ -49,6 +53,15 @@ namespace Fashion_Velyn_Store.Class
                     Console.WriteLine("Error al insertar el usuario: " + ex.Message);
                     return false;
                 }
+            }
+        }
+
+        private string HashPassword(string password)
+        {
+            using (System.Security.Cryptography.SHA256 sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
             }
         }
 

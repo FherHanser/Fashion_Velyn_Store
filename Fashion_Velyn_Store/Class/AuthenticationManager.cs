@@ -1,46 +1,62 @@
 ﻿using Microsoft.Data.Sqlite;
 using System;
+using System.Text;
 
 namespace Fashion_Velyn_Store.Class
 {
     public class AuthenticationManager
     {
-        private readonly DatabaseConnection dbConnection;
+        private DatabaseConnection dbConnection;
 
-        public AuthenticationManager(DatabaseConnection dbConnection)
+        public AuthenticationManager(DatabaseConnection connection)
         {
-            this.dbConnection = dbConnection;
+            dbConnection = connection;
         }
 
-        public string GetNameByCredentials(string nombreUsuario, string password)
+        public bool AuthenticateUser(string nombreUsuario, string password)
         {
             using (var connection = dbConnection.GetConnection())
             {
-                using (var command = connection.CreateCommand())
+                try
                 {
-                    command.CommandText =
-                        @"SELECT nombre || ' ' || apellido
-                  FROM usuarios
-                  WHERE nombre_usuario = @nombreUsuario AND password = @password";
-
-                    // Usar parámetros para evitar problemas de seguridad y rendimiento
-                    command.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
-                    command.Parameters.AddWithValue("@password", password);
-
-                    connection.Open();
-
-                    using (var reader = command.ExecuteReader())
+                    using (var command = connection.CreateCommand())
                     {
-                        if (reader.Read())
+                        command.CommandText = @"SELECT password FROM usuarios WHERE nombre_usuario = @nombreUsuario";
+                        command.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
+
+                        connection.Open();
+
+                        var hashedPasswordFromDB = (string)command.ExecuteScalar();
+
+                        if (hashedPasswordFromDB != null)
                         {
-                            return reader.GetString(0);
+                            string hashedPasswordInput = HashPassword(password);
+                            return hashedPasswordInput == hashedPasswordFromDB;
+                        }
+                        else
+                        {
+                            return false; // El usuario no existe en la base de datos
                         }
                     }
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error de autenticación: " + ex.Message);
+                    return false;
+                }
             }
-
-            return null;
         }
 
+        private string HashPassword(string password)
+        {
+            using (System.Security.Cryptography.SHA256 sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+            }
+        }
     }
+
+
 }
+
