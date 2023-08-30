@@ -65,9 +65,10 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(150, 203);
             label2.Name = "label2";
-            label2.Size = new Size(65, 15);
+            label2.Size = new Size(70, 16);
             label2.TabIndex = 3;
             label2.Text = "Iniciando...";
             // 

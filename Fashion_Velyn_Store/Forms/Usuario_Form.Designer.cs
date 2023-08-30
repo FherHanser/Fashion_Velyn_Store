@@ -61,19 +61,20 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(textBoxName);
             groupBox1.Controls.Add(label1);
-            groupBox1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(312, 79);
+            groupBox1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Location = new Point(260, 60);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(515, 361);
+            groupBox1.Size = new Size(590, 385);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Información del Nuevo Usuario";
             // 
             // button4
             // 
-            button4.Location = new Point(454, 14);
+            button4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.Location = new Point(515, 15);
             button4.Name = "button4";
-            button4.Size = new Size(57, 25);
+            button4.Size = new Size(65, 30);
             button4.TabIndex = 4;
             button4.Text = "Menú";
             button4.UseVisualStyleBackColor = true;
@@ -81,10 +82,10 @@
             // 
             // textBoxPass2
             // 
-            textBoxPass2.Location = new Point(172, 236);
+            textBoxPass2.Location = new Point(197, 252);
             textBoxPass2.Name = "textBoxPass2";
             textBoxPass2.PlaceholderText = "Confirme Contraseña";
-            textBoxPass2.Size = new Size(190, 21);
+            textBoxPass2.Size = new Size(173, 22);
             textBoxPass2.TabIndex = 11;
             textBoxPass2.UseSystemPasswordChar = true;
             textBoxPass2.TextChanged += textBoxPass2_TextChanged;
@@ -93,18 +94,18 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(26, 238);
+            label4.Location = new Point(32, 255);
             label4.Name = "label4";
-            label4.Size = new Size(123, 15);
+            label4.Size = new Size(132, 16);
             label4.TabIndex = 25;
             label4.Text = "Confirme Contraseña";
             // 
             // textBoxPass
             // 
-            textBoxPass.Location = new Point(172, 196);
+            textBoxPass.Location = new Point(197, 209);
             textBoxPass.Name = "textBoxPass";
             textBoxPass.PlaceholderText = "Escriba Contraseña";
-            textBoxPass.Size = new Size(190, 21);
+            textBoxPass.Size = new Size(173, 22);
             textBoxPass.TabIndex = 10;
             textBoxPass.UseSystemPasswordChar = true;
             textBoxPass.TextChanged += textBoxPass_TextChanged;
@@ -113,17 +114,18 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(83, 200);
+            label3.Location = new Point(88, 215);
             label3.Name = "label3";
-            label3.Size = new Size(70, 15);
+            label3.Size = new Size(76, 16);
             label3.TabIndex = 23;
             label3.Text = "Contraseña";
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(241, 298);
+            btnLimpiar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLimpiar.Location = new Point(153, 316);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(122, 34);
+            btnLimpiar.Size = new Size(95, 30);
             btnLimpiar.TabIndex = 22;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
@@ -131,9 +133,10 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(389, 298);
+            btnAgregar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregar.Location = new Point(275, 316);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(122, 34);
+            btnAgregar.Size = new Size(95, 30);
             btnAgregar.TabIndex = 21;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -141,64 +144,66 @@
             // 
             // textBoxUsuario
             // 
-            textBoxUsuario.Location = new Point(172, 153);
+            textBoxUsuario.Location = new Point(197, 163);
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.PlaceholderText = "Defina UserName";
-            textBoxUsuario.Size = new Size(190, 21);
+            textBoxUsuario.Size = new Size(173, 22);
             textBoxUsuario.TabIndex = 9;
             textBoxUsuario.KeyDown += TextBox_KeyDown;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(32, 158);
+            label7.Location = new Point(37, 169);
             label7.Name = "label7";
-            label7.Size = new Size(117, 15);
+            label7.Size = new Size(127, 16);
             label7.TabIndex = 13;
             label7.Text = "Nombre De Usuario";
             // 
             // textBoxApellidos
             // 
-            textBoxApellidos.Location = new Point(114, 99);
+            textBoxApellidos.Location = new Point(130, 106);
             textBoxApellidos.Name = "textBoxApellidos";
             textBoxApellidos.PlaceholderText = "Ingrese Apellidos";
-            textBoxApellidos.Size = new Size(249, 21);
+            textBoxApellidos.Size = new Size(240, 22);
             textBoxApellidos.TabIndex = 8;
             textBoxApellidos.KeyDown += TextBox_KeyDown;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(32, 103);
+            label2.Location = new Point(37, 110);
             label2.Name = "label2";
-            label2.Size = new Size(57, 15);
+            label2.Size = new Size(64, 16);
             label2.TabIndex = 7;
             label2.Text = "Apellidos";
             // 
             // textBoxName
             // 
-            textBoxName.Location = new Point(114, 57);
+            textBoxName.Location = new Point(130, 61);
             textBoxName.Name = "textBoxName";
             textBoxName.PlaceholderText = "Ingrese Nombre";
-            textBoxName.Size = new Size(249, 21);
+            textBoxName.Size = new Size(240, 22);
             textBoxName.TabIndex = 6;
             textBoxName.KeyDown += TextBox_KeyDown;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(32, 61);
+            label1.Location = new Point(37, 65);
             label1.Name = "label1";
-            label1.Size = new Size(58, 15);
+            label1.Size = new Size(63, 16);
             label1.TabIndex = 5;
             label1.Text = "Nombres";
             // 
             // Usuario_Form
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1104, 501);
+            ControlBox = false;
             Controls.Add(groupBox1);
+            Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Usuario_Form";
             StartPosition = FormStartPosition.CenterScreen;
