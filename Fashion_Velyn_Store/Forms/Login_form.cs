@@ -58,6 +58,8 @@ namespace Fashion_Velyn_Store
                 else
                 {
                     MessageBox.Show("Credenciales inválidas");
+                    TxtBoxUser.Text = string.Empty;
+                    TxtBoxPass.Text = string.Empty;
                 }
             }
         }
@@ -92,5 +94,9 @@ namespace Fashion_Velyn_Store
             Application.Exit();
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -57,6 +57,7 @@
             button5.TabIndex = 0;
             button5.Text = "HISTORIAL";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button1
             // 
@@ -68,6 +69,7 @@
             button1.TabIndex = 1;
             button1.Text = "NUEVO";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Main_Pagos
             // 

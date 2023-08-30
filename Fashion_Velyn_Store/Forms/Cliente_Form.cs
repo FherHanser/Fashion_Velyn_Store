@@ -14,7 +14,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Fashion_Velyn_Store
 {
- 
+
     public partial class Cliente_Form : Form
     {
         public Cliente_Form()
@@ -48,9 +48,15 @@ namespace Fashion_Velyn_Store
                 ErrorLabelManager.MostrarError(errorMessage, labelError);
                 return;
             }
+            else if (textBoxTel1.Text.Length < 8) // Verificar longitud del teléfono 1
+            {
+                errorMessage = "El teléfono 1 debe tener al menos 8 dígitos.";
+                ErrorLabelManager.MostrarError(errorMessage, labelError);
+                return;
+            }
             else
             {
-                labelError.Visible = false; 
+                labelError.Visible = false;
             }
 
             Cliente nuevoCliente = new Cliente
@@ -81,6 +87,7 @@ namespace Fashion_Velyn_Store
                 LimpiarCasillas();
             }
         }
+
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {

@@ -140,11 +140,11 @@
             // labelUserNameM
             // 
             labelUserNameM.AutoSize = true;
-            labelUserNameM.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            labelUserNameM.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelUserNameM.ForeColor = Color.MediumOrchid;
-            labelUserNameM.Location = new Point(99, 59);
+            labelUserNameM.Location = new Point(114, 60);
             labelUserNameM.Name = "labelUserNameM";
-            labelUserNameM.Size = new Size(50, 15);
+            labelUserNameM.Size = new Size(54, 16);
             labelUserNameM.TabIndex = 3;
             labelUserNameM.Text = "Usuario";
             // 
@@ -159,10 +159,11 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.MediumOrchid;
-            label1.Location = new Point(5, 59);
+            label1.Location = new Point(5, 60);
             label1.Name = "label1";
-            label1.Size = new Size(97, 15);
+            label1.Size = new Size(110, 16);
             label1.TabIndex = 4;
             label1.Text = "¡Manos a la obra!";
             // 

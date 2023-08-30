@@ -11,7 +11,7 @@ namespace Fashion_Velyn_Store.Class
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login_Form());
-
+            //Application.Run(new Main());
         }
     }
 }
