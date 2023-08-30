@@ -11,7 +11,6 @@ public static class PanelManager
         public static void AbrirFormularios<MiForm>(Panel panelForms) where MiForm : Form, new()
         {
             Form formularioActual = panelForms.Controls.OfType<Form>().FirstOrDefault();
-            //formularioActual?.Close();
 
             Form formulario = new MiForm();
             formulario.TopLevel = false;

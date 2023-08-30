@@ -33,14 +33,12 @@ namespace Fashion_Velyn_Store
         private void button1_Click(object sender, EventArgs e)
         {
             Usuario_Form usurioForm = new Usuario_Form();
-            this.Hide();
             usurioForm.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             List_Usuarios main = new List_Usuarios();
-            this.Hide();
             main.Show();
         }
     }

@@ -53,7 +53,6 @@
             TxtBoxUser.PlaceholderText = "Usuario en el sistema";
             TxtBoxUser.Size = new Size(133, 21);
             TxtBoxUser.TabIndex = 0;
-            TxtBoxUser.TextChanged += TxtBoxUser_TextChanged;
             TxtBoxUser.KeyDown += TextBox_KeyDown;
             // 
             // TxtBoxPass

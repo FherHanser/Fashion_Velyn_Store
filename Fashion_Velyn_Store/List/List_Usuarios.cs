@@ -75,12 +75,6 @@ namespace Fashion_Velyn_Store.List
             }
         }
 
-        private void textBoxBuscarUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void buttonBuscar_Click_1(object sender, EventArgs e)
 
         {

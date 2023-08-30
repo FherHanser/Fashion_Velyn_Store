@@ -9,15 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fashion_Velyn_Store.Class;
+
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Fashion_Velyn_Store
 {
+ 
     public partial class Cliente_Form : Form
     {
         public Cliente_Form()
         {
             InitializeComponent();
+
         }
 
         private void Cliente_Form_Load(object sender, EventArgs e)
@@ -29,7 +32,6 @@ namespace Fashion_Velyn_Store
         {
             this.Close();
         }
-
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -50,7 +52,6 @@ namespace Fashion_Velyn_Store
             {
                 labelError.Visible = false; 
             }
-
 
             Cliente nuevoCliente = new Cliente
             {
@@ -81,16 +82,12 @@ namespace Fashion_Velyn_Store
             }
         }
 
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
 
-
             LimpiarCasillas();
-
             labelError.Visible = false; // Hacer invisible el labelError al limpiar los campos
         }
-
 
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
@@ -122,11 +119,6 @@ namespace Fashion_Velyn_Store
         {
             ErrorLabelManager.ValidarNumericInput(textBoxTel1, 8);
 
-        }
-
-
-        private void labelError_Click(object sender, EventArgs e)
-        {
         }
 
         private void textBoxTel2_TextChanged(object sender, EventArgs e)

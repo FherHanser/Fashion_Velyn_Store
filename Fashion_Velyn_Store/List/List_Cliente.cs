@@ -41,9 +41,7 @@ namespace Fashion_Velyn_Store.List
 
         private void button4_Click(object sender, EventArgs e)
         {
-
             this.Close();
-
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
@@ -85,11 +83,6 @@ namespace Fashion_Velyn_Store.List
             {
                 MessageBox.Show("Por favor, ingrese un nombre a buscar.", "Campo Vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private void textBoxBuscarNombre_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
@@ -219,10 +212,6 @@ namespace Fashion_Velyn_Store.List
 
                 dataGridViewClientes_CellEndEdit(this, new DataGridViewCellEventArgs(columnIndex, rowIndex));
             }
-        }
-        private void panelForms_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
     }

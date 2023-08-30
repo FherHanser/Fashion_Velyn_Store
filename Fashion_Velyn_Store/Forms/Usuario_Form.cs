@@ -24,11 +24,6 @@ namespace Fashion_Velyn_Store
 
         }
 
-        private void BtnInsertarUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarCasillas();
@@ -86,7 +81,6 @@ namespace Fashion_Velyn_Store
             }
         }
 
-
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -94,21 +88,6 @@ namespace Fashion_Velyn_Store
                 e.Handled = true; // Para evitar que se emita un sonido al presionar Enter
                 this.SelectNextControl((Control)sender, true, true, true, true);
             }
-        }
-
-        private void textBoxName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxApellidos_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxUsuario_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void textBoxPass_TextChanged(object sender, EventArgs e)
@@ -125,11 +104,6 @@ namespace Fashion_Velyn_Store
                 timer.Dispose();
             };
             timer.Start();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void textBoxPass2_TextChanged(object sender, EventArgs e)

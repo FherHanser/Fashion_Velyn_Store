@@ -50,6 +50,7 @@ namespace Fashion_Velyn_Store
                     bienvenido.NombreCompleto = nombreCompleto; // Asigna el nombre completo al formulario de bienvenida
                     bienvenido.ShowDialog();
                     Main inicio = new Main();
+                    inicio.NombreCompletoM = nombreCompleto;
                     inicio.Show();
                 }
 
@@ -68,11 +69,6 @@ namespace Fashion_Velyn_Store
                 e.Handled = true; // Para evitar que se emita un sonido al presionar Enter
                 this.SelectNextControl((Control)sender, true, true, true, true);
             }
-        }
-
-        private void TxtBoxUser_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void TxtBoxPass_TextChanged(object sender, EventArgs e)
@@ -96,9 +92,5 @@ namespace Fashion_Velyn_Store
             Application.Exit();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

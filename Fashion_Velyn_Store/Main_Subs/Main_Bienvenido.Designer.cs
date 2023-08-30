@@ -32,6 +32,7 @@
             timer1 = new System.Windows.Forms.Timer(components);
             timer2 = new System.Windows.Forms.Timer(components);
             panel2 = new Panel();
+            label2 = new Label();
             progressBar1 = new ProgressBar();
             labelUserName = new Label();
             label1 = new Label();
@@ -40,29 +41,39 @@
             // 
             // timer1
             // 
-            timer1.Interval = 30;
+            timer1.Interval = 35;
             timer1.Tick += timer1_Tick;
             // 
             // timer2
             // 
-            timer2.Interval = 30;
+            timer2.Interval = 35;
             timer2.Tick += timer2_Tick;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.GhostWhite;
+            panel2.BackColor = Color.Thistle;
+            panel2.Controls.Add(label2);
             panel2.Controls.Add(progressBar1);
             panel2.Controls.Add(labelUserName);
             panel2.Controls.Add(label1);
             panel2.ForeColor = Color.SlateBlue;
-            panel2.Location = new Point(153, 53);
+            panel2.Location = new Point(153, 73);
             panel2.Name = "panel2";
-            panel2.Size = new Size(460, 272);
+            panel2.Size = new Size(460, 252);
             panel2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(150, 203);
+            label2.Name = "label2";
+            label2.Size = new Size(65, 15);
+            label2.TabIndex = 3;
+            label2.Text = "Iniciando...";
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(217, 223);
+            progressBar1.Location = new Point(217, 201);
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(217, 17);
             progressBar1.TabIndex = 2;
@@ -70,10 +81,10 @@
             // labelUserName
             // 
             labelUserName.AutoSize = true;
-            labelUserName.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            labelUserName.Location = new Point(120, 56);
+            labelUserName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            labelUserName.Location = new Point(180, 69);
             labelUserName.Name = "labelUserName";
-            labelUserName.Size = new Size(86, 25);
+            labelUserName.Size = new Size(96, 29);
             labelUserName.TabIndex = 1;
             labelUserName.Text = "Usuario";
             // 
@@ -82,18 +93,17 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.Fuchsia;
-            label1.Location = new Point(15, 14);
+            label1.Location = new Point(17, 27);
             label1.Name = "label1";
             label1.Size = new Size(175, 29);
             label1.TabIndex = 0;
             label1.Text = "BIENVENID@";
-            label1.Click += label1_Click;
             // 
             // Main_Bienvenido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.GhostWhite;
             ClientSize = new Size(612, 325);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
@@ -114,5 +124,6 @@
         private Label label1;
         private Label labelUserName;
         private ProgressBar progressBar1;
+        private Label label2;
     }
 }
