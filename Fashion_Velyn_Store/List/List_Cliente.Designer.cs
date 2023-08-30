@@ -76,7 +76,6 @@
             textBoxBuscarNombre.PlaceholderText = "Ingresa Nombre del Cliente";
             textBoxBuscarNombre.Size = new Size(190, 23);
             textBoxBuscarNombre.TabIndex = 8;
-            textBoxBuscarNombre.TextChanged += textBoxBuscarNombre_TextChanged;
             textBoxBuscarNombre.KeyDown += TextBox_KeyDown;
             // 
             // label1

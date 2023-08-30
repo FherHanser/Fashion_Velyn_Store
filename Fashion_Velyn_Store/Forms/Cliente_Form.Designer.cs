@@ -106,7 +106,6 @@
             labelError.TabIndex = 23;
             labelError.Text = "Mensaje";
             labelError.Visible = false;
-            labelError.Click += labelError_Click;
             // 
             // btnLimpiar
             // 

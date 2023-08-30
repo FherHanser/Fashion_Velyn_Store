@@ -98,7 +98,6 @@
             label4.Size = new Size(123, 15);
             label4.TabIndex = 25;
             label4.Text = "Confirme Contraseña";
-            label4.Click += label4_Click;
             // 
             // textBoxPass
             // 
@@ -147,7 +146,6 @@
             textBoxUsuario.PlaceholderText = "Defina UserName";
             textBoxUsuario.Size = new Size(190, 21);
             textBoxUsuario.TabIndex = 9;
-            textBoxUsuario.TextChanged += textBoxUsuario_TextChanged;
             textBoxUsuario.KeyDown += TextBox_KeyDown;
             // 
             // label7
@@ -166,7 +164,6 @@
             textBoxApellidos.PlaceholderText = "Ingrese Apellidos";
             textBoxApellidos.Size = new Size(249, 21);
             textBoxApellidos.TabIndex = 8;
-            textBoxApellidos.TextChanged += textBoxApellidos_TextChanged;
             textBoxApellidos.KeyDown += TextBox_KeyDown;
             // 
             // label2
@@ -185,7 +182,6 @@
             textBoxName.PlaceholderText = "Ingrese Nombre";
             textBoxName.Size = new Size(249, 21);
             textBoxName.TabIndex = 6;
-            textBoxName.TextChanged += textBoxName_TextChanged;
             textBoxName.KeyDown += TextBox_KeyDown;
             // 
             // label1

@@ -71,7 +71,7 @@ namespace Fashion_Velyn_Store.Class
                         }
                     }
 
-                    return false; // Credenciales inválidas
+                    return false; 
                 }
                 catch (Exception ex)
                 {
@@ -84,8 +84,6 @@ namespace Fashion_Velyn_Store.Class
         public bool GetCurrentUser(string nombreUsuario, out User currentUser)
         {
             currentUser = null;
-            // Implementa la lógica para obtener el usuario actual de la caché
-            // Retorna true si se encuentra el usuario en la caché, de lo contrario, false
             return userCache.TryGetValue(nombreUsuario, out currentUser);
         }
 

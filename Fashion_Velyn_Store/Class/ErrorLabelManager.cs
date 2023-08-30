@@ -14,7 +14,6 @@ namespace Fashion_Velyn_Store.Class
             labelError.Visible = true;
         }
 
-
         public static void ValidarNumericInput(TextBox textBox, int maxLength)
         {
             string input = textBox.Text;
@@ -28,8 +27,6 @@ namespace Fashion_Velyn_Store.Class
             textBox.Text = numericInput;
             textBox.SelectionStart = textBox.Text.Length;
         }
-
-
 
     }
 }

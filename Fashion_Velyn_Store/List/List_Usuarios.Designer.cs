@@ -100,7 +100,6 @@
             textBoxBuscarUsuario.PlaceholderText = "Ingresa Nombre del Usuario";
             textBoxBuscarUsuario.Size = new Size(190, 23);
             textBoxBuscarUsuario.TabIndex = 12;
-            textBoxBuscarUsuario.TextChanged += textBoxBuscarUsuario_TextChanged;
             textBoxBuscarUsuario.KeyDown += TextBox_KeyDown;
             // 
             // btnEliminarUsuario
